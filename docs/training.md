@@ -13,6 +13,13 @@ We welcome recommendations from our community, so do let us know if you come acr
 
 [CONTACT US :fontawesome-solid-paper-plane:](mailto:accelerate-mle@cst.cam.ac.uk){ .md-button }
 
+## Intro to AI
+We have put together a short online course as an introduction to some of the core AI concepts.
+
+| Title       | Level | Description                          | Link |
+| ----------- | ----- | ------------------------------------ | ---- |
+| AI Core Concepts | NEWCOMER | This short online course aims to introduce newcomers to some of the themes and concepts of AI. The goal is to help orient you in the field and signpost some next steps. | [link](https://acceleratescience.github.io/ai-core-concepts/) |
+
 ## Courses: Accelerate Science & Cambridge Spark
 These online courses are run jointly between the Accelerate programme and Cambridge Spark, and are available for university researchers to sign up to.
 
@@ -24,19 +31,29 @@ These online courses are run jointly between the Accelerate programme and Cambri
 
 
 
-## Courses & Workshops
-Other courses taught within the university are created by the Accelerate Programme's Machine Learning Engineers and researchers.
+## Accelerate Workshops
+Accelerate's 1-day workshops are created by the Accelerate Programme's Machine Learning Engineers and researchers. You can sign up to attend the workshops when we run them, or work through the online material at your own pace. 
+
+| Title       | Level | Description                          | Link |
+| ----------- | ----- | ------------------------------------ | ---- |
+| AI and Large Language Models Workshop | INTERMEDIATE | A one day workshop for researchers interested in using LLMs in their research. The aim of the session will be to equip researchers with knowledge of how LLMs work and how to implement them so you can use them in your own research.  | [link](https://acceleratescience.github.io/resources/ai-and-large-language-models-workshop.html) |
+| Diffusion Models Workshop | INTERMEDIATE | A one day workshop for researchers interested in using diffusion models in their research. The aim of the session will be to equip researchers with knowledge of how diffusion models work and how to implement them so you can use them in your own research.  | [link](https://acceleratescience.github.io/diffusion-models/) |
+| Data Pipelines for Science | INTERMEDIATE | Well-curated and managed data is central to the effective use of AI, in science and elsewhere. How can scientists build the data pipelines they need to accelerate their research with AI? Accelerate Science’s ‘Data Pipelines for Science’ School helps scientists overcome such data pipeline challenges by equipping them with the latest best-practice software techniques.  | [link](https://github.com/acceleratescience/data-school-Spring23) |
+| Publishing and Packaging Python Code | INTERMEDIATE | The Accelerate Programme's one day workshop to equip researchers with knowledge of workflows and tools they can use to package and publish their code. Participants will have the opportunity for hands on experience packaging and publishing a project. | [link](https://acceleratescience.github.io/events/packaging-and-publishing-python-code-for-research-workshop.html) |
+
+
+## University Courses
+Other AI-related courses taught within the university
 
 | Title       | Level | Description                          | Link |
 | ----------- | ----- | ------------------------------------ | ---- |
 | ML and Adaptive Intelligence | NEWCOMER | This course - Machine Learning and Adaptive Intelligence - was originally delivered at the University of Sheffield (2011-2015), but has been updated with current material to introduce key concepts and methods in machine learning.  | [link](https://mlatcl.github.io/mlai/) |
-| AI and Large Language Models Workshop | INTERMEDIATE | A one day workshop for researchers interested in using LLMs in their research. The aim of the session will be to equip researchers with knowledge of how LLMs work and how to implement them so you can use them in your own research.  | [link](https://acceleratescience.github.io/resources/ai-and-large-language-models-workshop.html) |
 | Advanced Data Science | INTERMEDIATE | This course - Advanced Data Science - looks at the real world challenges of data science, separating them into three stages: access, assess and address. The stages help in understanding that the data science pipeline is not just about the machine learning methods, but the ethical concerns, the challenges of data management as well as model fitting. | [link](https://mlatcl.github.io/advds/) |
 | Data Visualisation | INTERMEDIATE | This lecture on data visualisation, together with code, can help you understand the different ways to look at data and to effectively showcase your research results.  | [link](https://github.com/neelsoumya/visualization_lecture) |
-| Data Pipelines for Science | INTERMEDIATE | Well-curated and managed data is central to the effective use of AI, in science and elsewhere. How can scientists build the data pipelines they need to accelerate their research with AI? Accelerate Science’s ‘Data Pipelines for Science’ School helps scientists overcome such data pipeline challenges by equipping them with the latest best-practice software techniques.  | [link](https://github.com/acceleratescience/data-school-Spring23) |
-| Publishing and Packaging Python Code | INTERMEDIATE | The Accelerate Programme's one day workshop to equip researchers with knowledge of workflows and tools they can use to package and publish their code. Participants will have the opportunity for hands on experience packaging and publishing a project. | [link](https://acceleratescience.github.io/events/packaging-and-publishing-python-code-for-research-workshop.html) |
 | Machine Learning and the Physical World | PROFICIENT | This course - Machine Learning and the Physical World - is focused on how to build machine learning systems that interact directly with the real world. It explores how to create models with a principled treatment of uncertainty, allowing researchers to leverage prior knowledge and provide decisions that can be interrogated.  | [link](https://mlatcl.github.io/mlphysical/) |
 | Theory of Deep Learning | PROFICIENT | The objective of this course is to expose you to one of the most active contemporary research directions within machine learning: the theory of deep learning (DL). While the first wave of modern DL focussed on empirical breakthroughs and ever more complex techniques, attention is now shifting to building a solid mathematical understanding of why these techniques work so well in the first place. | [link](https://www.cl.cam.ac.uk/teaching/2324/R252/) |
+
+
 
 ## Textbooks
 We recommend the following textbooks to cover the basics of Machine Learning and AI:

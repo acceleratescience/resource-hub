@@ -8,6 +8,9 @@ First and foremost, AI can be compute-intensive! We highly recommend using the *
 - [HPC Access Application Form](https://www.hpc.cam.ac.uk/rcs-application)
 - [Usage allocations](https://docs.hpc.cam.ac.uk/hpc/user-guide/policies.html#service-level-3-free-usage)
 
+The Bioinformatics department have created a comprehensive [introduction to using the HPC](https://bioinfotraining.bio.cam.ac.uk/postgraduate/basic-skills-and-programming).
+
+
 **Managing experimentation** can become cumbersome as you start to use different models and datasets. Weights & Biases or MLflow are platforms that allow you to track ML experiments. As you move to using AI in your own domains, these platforms can make your life easier:
 
 - [https://mlflow.org](https://mlflow.org/)
