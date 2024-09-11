@@ -18,7 +18,7 @@ We have put together a short online course as an introduction to some of the cor
 
 | Title       | Level | Description                          | Link |
 | ----------- | ----- | ------------------------------------ | ---- |
-| AI Core Concepts | NEWCOMER | This short online course aims to introduce newcomers to some of the themes and concepts of AI. The goal is to help orient you in the field and signpost some next steps. | [link](https://acceleratescience.github.io/ai-core-concepts/) |
+| AI Core Concepts | NEWCOMER | This short online course aims to introduce newcomers to some of the themes and concepts of AI. The goal is to help orient you in the field and signpost some next steps. | [link](https://docs.science.ai.cam.ac.uk/ai-core-concepts/) |
 
 ## Courses: Accelerate Science & Cambridge Spark
 These online courses are run jointly between the Accelerate programme and Cambridge Spark, and are available for university researchers to sign up to.
@@ -36,10 +36,10 @@ Accelerate's 1-day workshops are created by the Accelerate Programme's Machine L
 
 | Title       | Level | Description                          | Link |
 | ----------- | ----- | ------------------------------------ | ---- |
-| AI and Large Language Models Workshop | INTERMEDIATE | A one day workshop for researchers interested in using LLMs in their research. The aim of the session will be to equip researchers with knowledge of how LLMs work and how to implement them so you can use them in your own research.  | [link](https://acceleratescience.github.io/resources/ai-and-large-language-models-workshop.html) |
-| Diffusion Models Workshop | INTERMEDIATE | A one day workshop for researchers interested in using diffusion models in their research. The aim of the session will be to equip researchers with knowledge of how diffusion models work and how to implement them so you can use them in your own research.  | [link](https://acceleratescience.github.io/diffusion-models/) |
+| AI and Large Language Models Workshop | INTERMEDIATE | A one day workshop for researchers interested in using LLMs in their research. The aim of the session will be to equip researchers with knowledge of how LLMs work and how to implement them so you can use them in your own research.  | [link](https://github.com/acceleratescience/large-language-models) |
+| Diffusion Models Workshop | INTERMEDIATE | A one day workshop for researchers interested in using diffusion models in their research. The aim of the session will be to equip researchers with knowledge of how diffusion models work and how to implement them so you can use them in your own research.  | [link](https://github.com/acceleratescience/diffusion-models) |
 | Data Pipelines for Science | INTERMEDIATE | Well-curated and managed data is central to the effective use of AI, in science and elsewhere. How can scientists build the data pipelines they need to accelerate their research with AI? Accelerate Science’s ‘Data Pipelines for Science’ School helps scientists overcome such data pipeline challenges by equipping them with the latest best-practice software techniques.  | [link](https://github.com/acceleratescience/data-school-Spring23) |
-| Publishing and Packaging Python Code | INTERMEDIATE | The Accelerate Programme's one day workshop to equip researchers with knowledge of workflows and tools they can use to package and publish their code. Participants will have the opportunity for hands on experience packaging and publishing a project. | [link](https://acceleratescience.github.io/events/packaging-and-publishing-python-code-for-research-workshop.html) |
+| Publishing and Packaging Python Code | INTERMEDIATE | The Accelerate Programme's one day workshop to equip researchers with knowledge of workflows and tools they can use to package and publish their code. Participants will have the opportunity for hands on experience packaging and publishing a project. | [link](https://github.com/acceleratescience/packaging-publishing) |
 
 
 ## University Courses
