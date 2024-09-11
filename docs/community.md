@@ -1,8 +1,8 @@
 # Community
 
-**We are building a community of AI researchers across the university**
+**We are building a community of AI researchers across the university, and we'd love for you to join us.**
 
-As AI is adopted across disciplines, scientists face challenges understanding and implementing this new technology. We are building a community of researchers working at the interface of AI and the sciences and to date over 750 researchers from more than 80 Departments at the University have engaged with the programme to share knowledge and experience.
+As AI is adopted across disciplines, scientists face challenges understanding and implementing this new technology. We are building a community of researchers working at the interface of AI and the sciences. To date, over 750 researchers from more than 80 Departments at the University have engaged with the programme to share knowledge and experience.
 
 [CONTACT US :fontawesome-solid-paper-plane:](mailto:accelerate-mle@cst.cam.ac.uk){ .md-button }
 
