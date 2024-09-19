@@ -1,6 +1,6 @@
 site_name: Accelerate Science Resource Hub
 repo_url: https://github.com/acceleratescience/resource-hub/
-site_url: https://acceleratescience.github.io/resource-hub/
+site_url: https://docs.science.ai.cam.ac.uk
 nav:
   - Home: index.md
   - Training: training.md
