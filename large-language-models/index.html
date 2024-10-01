@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="imgs/trace.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.36">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.06209087.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.8c3ca2c6.min.css">
       
         
         <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
@@ -360,16 +360,19 @@
   
   
   
-    <li class="md-tabs__item">
-      <a href="8_llamaindex/" class="md-tabs__link">
-        
+    
+    
+      <li class="md-tabs__item">
+        <a href="data-storage-and-ingestion/8_data_storage/" class="md-tabs__link">
+          
   
     
   
-  Data storage
+  Data Storage and Documents
 
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
@@ -795,8 +798,54 @@
   
   
   
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Data Storage and Documents
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Data Storage and Documents
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="8_llamaindex/" class="md-nav__link">
+      <a href="data-storage-and-ingestion/8_data_storage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -805,6 +854,35 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="data-storage-and-ingestion/9_documents/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Documents
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -832,13 +910,35 @@
   </a></p>
 <h1 id="llm-hands-on-workshop">LLM Hands on Workshop</h1>
 <p><img alt="image" src="imgs/scientist.webp" /></p>
-<p>Welcome to the material for the LLM Hands on Workshop!</p>
-<p>There is a wealth of material online about how to use and work with LLMs. So much so in face that it can hard to know where to start, and what path to take to get from beginner to proficient.</p>
-<p>Therefore, we have created this workshop by combining the best bits of many different resources, and focusing on practical skills that you can use to work with LLMs.</p>
+<h3 id="welcome-to-the-material-for-the-llm-hands-on-workshop">Welcome to the material for the LLM Hands on Workshop!</h3>
+<p>There is a wealth of material online about how to use and work with LLMs. So much so that it can hard to know where to start, and what path to take to get from beginner to proficient. Therefore, we have created this workshop by combining the best bits of many different resources, and focusing on practical skills that you can use to work with LLMs.</p>
+<h2 id="a-focus-on-retrieval-augmented-generation">A focus on retrieval augmented generation</h2>
+<p>This workshop places the focus on retrieval augmented generation (RAG). The general RAG process looks something like the below:</p>
+<pre class="mermaid"><code>flowchart RL
+    database[(Database)]
+    document&gt;Document]
+    index{index}
+    human((Human))
+    llm((LLM))
+    combined[Prompt template
+    + query 
+    + context]
+    database --&gt; index
+    document --&gt; index
+    human -- "Query" --&gt; index
+    index --&gt; combined
+    combined --&gt; llm
+    llm -- "Response" --&gt; human</code></pre>
+<p>We are used to interacting with user interfaces like ChatGPT, and not always aware of the infrastructure underneath. In short, RAG involves taking some data from a document or database and creating an index - a database that allows us to quickly search over chunks of our documents. When a user sends input to the model interface, this database is queried and the relevant search results are returned, similar to when you Google something, you get a list of potential websites to check. These relevant chunks are then sent to a LLM, along with your original input, and the LLM generates a response.</p>
+<p>Sounds easy?</p>
+<p>Well yes - and no! While it is fairly easy to get up and running with RAG, it is actually quite hard to get it working correctly and consistently.</p>
 <p>We try to focus on a framework agnostic approach, so that you can use models from any provider, or run local models if you like. Instead of relying on popular but complex frameworks like LangChain or LlamaIndex, we've chosen to focus on fundamental tools:</p>
 <ul>
-<li>Direct API interactions</li>
+<li>Direct API interactions using OpenAI</li>
+<li>Data validation using Pydantic</li>
 <li>Jinja templates for prompt engineering</li>
+<li>ChromaDB for indexing</li>
+<li>Streamlit for user interfaces</li>
 </ul>
 <p>By building from the ground up, this workshop aims to provide researchers and practitioners with:</p>
 <ul>
@@ -1112,7 +1212,7 @@ By the end of this workshop, you'll have a robust, foundational understanding of
     <script id="__config" type="application/json">{"base": ".", "features": ["toc.integrate", "search.suggest", "search.highlight", "announce.dismiss", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.56dfad97.min.js"></script>
+      <script src="assets/javascripts/bundle.525ec568.min.js"></script>
       
     
   </body>

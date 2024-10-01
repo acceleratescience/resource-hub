@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../imgs/trace.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.36">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.06209087.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8c3ca2c6.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -362,16 +362,19 @@
   
   
   
-    <li class="md-tabs__item">
-      <a href="../../8_llamaindex/" class="md-tabs__link">
-        
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../data-storage-and-ingestion/8_data_storage/" class="md-tabs__link">
+          
   
     
   
-  Data storage
+  Data Storage and Documents
 
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
@@ -927,8 +930,54 @@
   
   
   
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Data Storage and Documents
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Data Storage and Documents
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../8_llamaindex/" class="md-nav__link">
+      <a href="../../data-storage-and-ingestion/8_data_storage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -937,6 +986,35 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-storage-and-ingestion/9_documents/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Documents
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1492,7 +1570,7 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")</div>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [61]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-2">
@@ -1551,7 +1629,7 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")</div>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [63]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-3">
@@ -1596,7 +1674,7 @@ print(response.choices[0].message.content)</div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Glass A has more water than glass C. The water level in glass C appears higher due to its taller and thinner shape, but it contains less water than glass A.
+<pre>Glass A has more water than glass C. The height of the water level in glass C is due to its taller and thinner shape, but it contains less water overall than glass A.
 </pre>
 </div>
 </div>
@@ -1628,7 +1706,7 @@ print(response.choices[0].message.content)</div>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [77]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-4">
@@ -1697,17 +1775,19 @@ print(response.choices[0].message.content)</div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>To determine which glass has more water, we need to consider the following points:
+<pre>To determine which glass has more water, we need to consider the volume of water in each glass.
 
-1. Glasses A and B have the same water level, indicating they contain the same volume of water.
-2. When the water from glass B is poured into glass C, the water level in glass C appears higher than the water level in glass A.
-3. However, since glass C is taller and thinner, it can hold a larger volume of water without the water level appearing as high as in a shorter, wider glass.
+1. **Initial Observation**: Glasses A and B have the same water level, indicating they contain the same volume of water.
 
-Since the water level in glass C appears higher than in glass A after pouring, it suggests that glass C has more water than glass A. However, we know that glass A and B had the same amount of water initially.
+2. **Pouring Water**: When you pour the water from glass B into glass C, the volume of water from B is transferred to C.
 
-Thus, after pouring the water from B into C, glass C must contain the same amount of water as glass B, which is equal to the amount in glass A. Therefore, glass A and glass C have the same amount of water.
+3. **Water Level in Glass C**: After pouring, the water level in glass C appears higher than in glass A. This is due to the taller and thinner shape of glass C, which can make the water level appear higher even if the volume is not greater.
 
-In conclusion, glasses A and C have the same amount of water.
+4. **Volume Comparison**: Since glasses A and B had the same volume of water initially, and all of the water from B was transferred to C, the total volume of water in glass C is now equal to the volume of water in glass A plus the volume of water that was in glass B (which is the same as in A).
+
+Thus, after pouring, glass C contains the same amount of water as glass A, because it started with the same amount from glass B. 
+
+**Conclusion**: Glass A and glass C have the same amount of water.
 </pre>
 </div>
 </div>
@@ -1731,7 +1811,7 @@ In conclusion, glasses A and C have the same amount of water.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [78]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-5">
@@ -1792,7 +1872,7 @@ In conclusion, glasses A and C have the same amount of water.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [81]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-6">
@@ -1843,11 +1923,11 @@ print(response.choices[0].message.content)</div>
 
 2. **Pouring Water**: When you pour the water from glass B into glass C, the water from B is transferred to C.
 
-3. **Water Level in Glass C**: After pouring, the water level in glass C appears higher than the water level in glass A.
+3. **Water Level in Glass C**: After pouring, the water level in glass C appears to be higher than the water level in glass A.
 
 4. **Volume Comparison**: Since glasses A and B initially had the same volume of water, and you poured all of the water from B into C, the total volume of water in glass C is now equal to the volume of water in glass B plus the volume of water that was already in glass C (which was initially empty).
 
-5. **Conclusion**: Since glass A had the same amount of water as glass B, and glass C now contains all of the water from B (and potentially more if it had any water initially), glass C must have more water than glass A.
+5. **Conclusion**: Since glass A had the same amount of water as glass B before the pour, and now glass C has the water from B plus whatever was in C, glass C must have more water than glass A.
 
 Thus, glass C has more water than glass A.
 </pre>
@@ -1874,9 +1954,126 @@ Thus, glass C has more water than glass A.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>How is it suddenly now wrong!? Although LLMs have ingested enormous amounts of human text, they are not like people. You can reason with them in the same way as you can with people. Adding <code>very carefully</code> to the prompt should intuitively make the prompt better, but in this case it has caused a failure. In fact even with the successful prompt we tried, if you repeat it many times, you will probably have failures.</p>
+<p>How is it suddenly now wrong!? Although LLMs have ingested enormous amounts of human text, they are not like people. You cannot reason with them in the same way as you can with people. Adding <code>very carefully</code> to the prompt should intuitively make the prompt better, but in this case it has caused a failure. In fact even with the successful prompt we tried, if you repeat it many times, you will probably have failures.</p>
 <p>Humans do not fail reasoning tasks in this way.</p>
 <p>The lesson here is that CoT can be a powerful way to improve performance, but it is <strong>not</strong> foolproof. Hallucination is almost impossible to eliminate, and prompting can be incredibly fragile.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Can you spot the issue with my prompt and the reasoning...?</p>
+<p>Read the conclusion very carefully, and then read the prompt carefully. In particular, the part where I introduce glass C. I never said that glass C was empty! It can be very hard to craft high quality prompts! What happens if I add that additional information?</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-7">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">user_query</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">"Suppose I show you two glasses of water, labelled A and B. "</span>
+    <span class="s2">"Glasses A and B appear to be identical in shape, and the water level appears "</span>
+    <span class="s2">"to be at the same height in both glasses. "</span>
+    <span class="s2">"I now bring out an empty third glass, labelled C. "</span>
+    <span class="s2">"Glass C appears to be taller and thinner than glasses A and B. "</span>
+    <span class="s2">"I pour the water from glass B into glass C. "</span>
+    <span class="s2">"The water level in glass C appears to be higher than the water level in glass A. "</span>
+    <span class="s2">"Which glass has more water, A or C? "</span>
+    <span class="s2">"Keep your answer consise and think through the problem very carefully step by step."</span>
+<span class="p">)</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+    <span class="n">model</span><span class="o">=</span><span class="s2">"gpt-4o-mini"</span><span class="p">,</span>
+    <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">{</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"user"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="n">user_query</span><span class="p">},</span>
+    <span class="p">],</span>
+    <span class="n">max_tokens</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span>
+    <span class="n">temperature</span><span class="o">=</span><span class="mf">0.0</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-7">user_query = (
+    "Suppose I show you two glasses of water, labelled A and B. "
+    "Glasses A and B appear to be identical in shape, and the water level appears "
+    "to be at the same height in both glasses. "
+    "I now bring out an empty third glass, labelled C. "
+    "Glass C appears to be taller and thinner than glasses A and B. "
+    "I pour the water from glass B into glass C. "
+    "The water level in glass C appears to be higher than the water level in glass A. "
+    "Which glass has more water, A or C? "
+    "Keep your answer consise and think through the problem very carefully step by step."
+)
+
+response = client.chat.completions.create(
+    model="gpt-4o-mini",
+    messages=[
+        {"role": "user", "content": user_query},
+    ],
+    max_tokens=512,
+    temperature=0.0
+)
+
+print(response.choices[0].message.content)</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>To determine which glass has more water, we need to analyze the situation step by step:
+
+1. **Initial Condition**: Glasses A and B have the same water level, meaning they contain the same volume of water.
+
+2. **Pouring Water**: When you pour the water from glass B into glass C, the water from B is transferred to C.
+
+3. **Water Level in Glass C**: After pouring, the water level in glass C appears to be higher than the water level in glass A. This is due to the shape of glass C being taller and thinner.
+
+4. **Volume Comparison**: Since glass B initially had the same amount of water as glass A, and all the water from B is now in glass C, the volume of water in glass C is equal to the volume of water that was in glass B.
+
+5. **Conclusion**: Since glass A and glass B had the same amount of water, and all of the water from B is now in C, glass C contains the same amount of water as glass A. Therefore, both glasses A and C have the same volume of water.
+
+**Final Answer**: Glass A and glass C have the same amount of water.
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Now both versions are correct.</p>
 </div>
 </div>
 </div>
@@ -1911,7 +2108,7 @@ Thus, glass C has more water than glass A.
 <div class="jp-InputPrompt jp-InputArea-prompt">In [82]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-7">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-8">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -1932,7 +2129,7 @@ Thus, glass C has more water than glass A.
     <span class="s2">"For which number of N will all sheep be safe? Keep your answer concise."</span>
 <span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-7">user_query = (
+<div class="clipboard-copy-txt" id="cell-8">user_query = (
     "There is an island with infinite grass and vegetation. "
     "The island is inhabited by 1 sheep and N lions. "
     "The lions can survive by eating the sheep or vegetation, "
@@ -1956,7 +2153,7 @@ Thus, glass C has more water than glass A.
 <div class="jp-InputPrompt jp-InputArea-prompt">In [84]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-8">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-9">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -1977,7 +2174,7 @@ Thus, glass C has more water than glass A.
 
 <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-8">response = client.chat.completions.create(
+<div class="clipboard-copy-txt" id="cell-9">response = client.chat.completions.create(
   model="gpt-4o-mini",
   messages=[
     {"role": "user", "content": user_query},
@@ -2027,7 +2224,7 @@ print(response.choices[0].message.content)</div>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [96]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-9">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-10">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2049,7 +2246,7 @@ print(response.choices[0].message.content)</div>
     <span class="s2">"Think through the problem step-by-step."</span>
 <span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-9">user_query = (
+<div class="clipboard-copy-txt" id="cell-10">user_query = (
     "There is an island with infinite grass and vegetation. "
     "The island is inhabited by 1 sheep and N lions. "
     "The lions can survive by eating the sheep or vegetation, "
@@ -2074,7 +2271,7 @@ print(response.choices[0].message.content)</div>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [97]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-10">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-11">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2095,7 +2292,7 @@ print(response.choices[0].message.content)</div>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-10">response = client.chat.completions.create(
+<div class="clipboard-copy-txt" id="cell-11">response = client.chat.completions.create(
   model="gpt-4o-mini",
   messages=[
     {"role": "user", "content": user_query},
@@ -2194,7 +2391,7 @@ Thus, the final conclusion is:
 <div class="jp-InputPrompt jp-InputArea-prompt">In [104]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-11">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-12">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2223,7 +2420,7 @@ Thus, the final conclusion is:
 <span class="n">zipped</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">all_haikus</span><span class="p">,</span> <span class="n">targets</span><span class="p">))</span>
 <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">zipped</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-11">
+<div class="clipboard-copy-txt" id="cell-12">
 with open("haiku/real_haiku.txt", "r") as f:
     real_haikus = f.read().split("\n\n")
 
@@ -2287,7 +2484,7 @@ Sound of water's splash.
 <div class="jp-InputPrompt jp-InputArea-prompt">In [105]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-12">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-13">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2318,7 +2515,7 @@ Sound of water's splash.
     <span class="p">)</span>
     <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">haiku</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-12">from tqdm import tqdm
+<div class="clipboard-copy-txt" id="cell-13">from tqdm import tqdm
 
 system_prompt = (
     "You will be shown a haiku that is either written by a human or by a computer. "
@@ -2366,7 +2563,7 @@ for haiku, target in tqdm(zipped):
 <div class="jp-InputPrompt jp-InputArea-prompt">In [106]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-13">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-14">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2380,7 +2577,7 @@ for haiku, target in tqdm(zipped):
 <span class="k">for</span> <span class="n">haiku</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">response</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-13"># print target, response
+<div class="clipboard-copy-txt" id="cell-14"># print target, response
 for haiku, target, response in result:
     print(target, response)</div>
 </div>
@@ -2431,7 +2628,7 @@ for haiku, target, response in result:
 <div class="jp-InputPrompt jp-InputArea-prompt">In [110]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-14">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-15">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2453,7 +2650,7 @@ for haiku, target, response in result:
     <span class="p">{</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"assistant"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="s2">"computer"</span><span class="p">},</span>
 <span class="p">]</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-14">messages = [
+<div class="clipboard-copy-txt" id="cell-15">messages = [
     {"role": "system", "content": system_prompt},
     {"role": "user", "content": "A cicada shell\nit sang itself\nutterly away"},
     {"role": "assistant", "content": "human"},
@@ -2478,7 +2675,7 @@ for haiku, target, response in result:
 <div class="jp-InputPrompt jp-InputArea-prompt">In [111]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-15">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-16">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2497,7 +2694,7 @@ for haiku, target, response in result:
     <span class="p">)</span>
     <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">haiku</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-15">result = []
+<div class="clipboard-copy-txt" id="cell-16">result = []
 for haiku, target in tqdm(zipped):
     response = client.chat.completions.create(
       model="gpt-4o",
@@ -2532,7 +2729,7 @@ for haiku, target in tqdm(zipped):
 <div class="jp-InputPrompt jp-InputArea-prompt">In [112]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-16">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-17">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2545,7 +2742,7 @@ for haiku, target in tqdm(zipped):
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="k">for</span> <span class="n">haiku</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">response</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-16">for haiku, target, response in result:
+<div class="clipboard-copy-txt" id="cell-17">for haiku, target, response in result:
     print(target, response)</div>
 </div>
 </div>
@@ -2871,7 +3068,7 @@ for haiku, target in tqdm(zipped):
     <script id="__config" type="application/json">{"base": "../..", "features": ["toc.integrate", "search.suggest", "search.highlight", "announce.dismiss", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      <script src="../../assets/javascripts/bundle.525ec568.min.js"></script>
       
     
   </body>

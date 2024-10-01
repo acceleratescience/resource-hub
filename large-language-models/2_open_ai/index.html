@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../imgs/trace.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.36">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.06209087.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.8c3ca2c6.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -362,16 +362,19 @@
   
   
   
-    <li class="md-tabs__item">
-      <a href="../8_llamaindex/" class="md-tabs__link">
-        
+    
+    
+      <li class="md-tabs__item">
+        <a href="../data-storage-and-ingestion/8_data_storage/" class="md-tabs__link">
+          
   
     
   
-  Data storage
+  Data Storage and Documents
 
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
@@ -617,6 +620,15 @@
   
     <nav class="md-nav" aria-label="Chat Completions">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#additional-arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional arguments
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#available-models" class="md-nav__link">
@@ -883,8 +895,54 @@
   
   
   
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Data Storage and Documents
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Data Storage and Documents
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../8_llamaindex/" class="md-nav__link">
+      <a href="../data-storage-and-ingestion/8_data_storage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -893,6 +951,35 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-storage-and-ingestion/9_documents/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Documents
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1512,6 +1599,90 @@ Honor in each pounce.
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Purrfect.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>The API offers a number of <em>endpoints</em> that allow you to interact with the models. The main one that we will cover here is the <code>/chat/completions</code> endpoint. This endpoint allows you to interact with the model in a conversational manner.</p>
+<p>Only 2 arguments are actually required for this endpoint:</p>
+<ul>
+<li><p><code>model: str</code> The model to use. For OpenAI, this includes:</p>
+<ul>
+<li><p><code>'gpt-3.5-turbo'</code></p>
+</li>
+<li><p><code>'gpt-4'</code></p>
+</li>
+<li><p><code>'gpt-4o'</code></p>
+</li>
+<li><p><code>'gpt-4o-mini'</code></p>
+</li>
+<li><p>Any fine-tuned versions of these models.</p>
+</li>
+<li><p>Many specific versions of the above models.</p>
+</li>
+</ul>
+</li>
+<li><p><code>messages: list</code> A list of messages that the model should use to generate a response. Each entry in the list of messages comes in the form:</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"&lt;role&gt;"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="s2">"&lt;content&gt;"</span><span class="p">,</span> <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"&lt;name&gt;"</span><span class="p">}</span>
+</pre></div>
+<p>Where <code>&lt;role&gt;</code> can take one of the following forms:</p>
+<ul>
+<li><code>'system'</code> This is a system level prompt, designed to guide the conversation. For example:</li>
+</ul>
+<p><em>"You are a customer service bot."</em></p>
+<ul>
+<li><code>'user'</code> This is direct input from the user. For example:</li>
+</ul>
+<p><em>"How do I reset my password?"</em></p>
+<ul>
+<li><code>'assistant'</code> This is the response from the model. For example:</li>
+</ul>
+<p><em>"To reset your password, please visit our website and click on the 'Forgot Password' link."</em></p>
+<p>So all of this fed into one message list would look like this:</p>
+<div class="highlight"><pre><span></span><span class="n">messages</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"system"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="s2">"You are a customer service bot."</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"user"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="s2">"How do I reset my password?"</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"assistant"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="s2">"To reset your password, please visit our website and click on the 'Forgot Password' link."</span><span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="additional-arguments">Additional arguments<a class="anchor-link" href="#additional-arguments">¶</a></h3><p>The <code>/chat/completions</code> endpoint also accepts a number of additional arguments that can be used to alter the response. These include (arguments are listed with their default values if applicable):</p>
+<ul>
+<li><p><code>max_tokens: int</code> The maximum number of tokens to generate in the response. Important to stop the model from generating too much text and racking up a huge bill.</p>
+</li>
+<li><p><code>n: int = 1</code> The number of completions to generate. This is useful when you want to generate multiple completions and select the best one. You'll be charged for the <em><strong>total</strong></em> number of tokens generated across all completions, so be careful with setting this too high.</p>
+</li>
+<li><p><code>temperature: float = 1.0</code> The temperature of the model, ranging from 0.0 to 2. Use low values for deterministic responses, and high values for more creative responses.</p>
+</li>
+<li><p><code>top_p: float = 1.0</code> The probability of sampling from the top <code>p</code> tokens. This is useful for controlling the diversity of the responses. Setting this to a higher values means the model is more likely to sample from a wider range of tokens.</p>
+</li>
+<li><p><code>logprobs: bool = False</code> Whether to return the log probabilities of the tokens generated. This is useful when you want to understand how the model is making decisions.</p>
+</li>
+<li><p><code>logit_bias: dict</code> A dictionary of logit biases to apply to the tokens. This is useful when you want to guide the model towards generating certain types of responses.</p>
+</li>
+<li><p><code>response_format: str</code> The format of the response. We will cover this later...</p>
+</li>
+<li><p><code>stream: bool = False</code> Whether to stream the response back to the client. This is useful when you want to get the response in real-time. Nobody likes to sit and wait for a response. Seeing the text generated as and when it is ready is a much better user experience.</p>
+</li>
+</ul>
+<p>For a full list of arguments, check out the <a href="https://platform.openai.com/docs/api-reference/chat/create">OpenAI API documentation</a>.</p>
 </div>
 </div>
 </div>
@@ -2337,7 +2508,7 @@ These results highlight the critical dynamics and self-organized behavior of the
     <script id="__config" type="application/json">{"base": "..", "features": ["toc.integrate", "search.suggest", "search.highlight", "announce.dismiss", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.56dfad97.min.js"></script>
+      <script src="../assets/javascripts/bundle.525ec568.min.js"></script>
       
     
   </body>
