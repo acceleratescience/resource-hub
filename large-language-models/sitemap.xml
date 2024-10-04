@@ -33,11 +33,11 @@
          <lastmod>2024-10-04</lastmod>
     </url>
     <url>
-         <loc>https://docs.science.ai.cam.ac.uk/large-language-models/data-storage-and-ingestion/8_data_storage/</loc>
+         <loc>https://docs.science.ai.cam.ac.uk/large-language-models/data-storage-and-ingestion/9_documents/</loc>
          <lastmod>2024-10-04</lastmod>
     </url>
     <url>
-         <loc>https://docs.science.ai.cam.ac.uk/large-language-models/data-storage-and-ingestion/9_documents/</loc>
+         <loc>https://docs.science.ai.cam.ac.uk/large-language-models/prompting/</loc>
          <lastmod>2024-10-04</lastmod>
     </url>
     <url>
@@ -73,11 +73,35 @@
          <lastmod>2024-10-04</lastmod>
     </url>
     <url>
+         <loc>https://docs.science.ai.cam.ac.uk/large-language-models/states/</loc>
+         <lastmod>2024-10-04</lastmod>
+    </url>
+    <url>
          <loc>https://docs.science.ai.cam.ac.uk/large-language-models/states/6_states/</loc>
          <lastmod>2024-10-04</lastmod>
     </url>
     <url>
          <loc>https://docs.science.ai.cam.ac.uk/large-language-models/states/7_summary/</loc>
+         <lastmod>2024-10-04</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.science.ai.cam.ac.uk/large-language-models/states/8_data_storage/</loc>
+         <lastmod>2024-10-04</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.science.ai.cam.ac.uk/large-language-models/streamlit/</loc>
+         <lastmod>2024-10-04</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.science.ai.cam.ac.uk/large-language-models/streamlit/app/</loc>
+         <lastmod>2024-10-04</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.science.ai.cam.ac.uk/large-language-models/streamlit/streamlit/</loc>
+         <lastmod>2024-10-04</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.science.ai.cam.ac.uk/large-language-models/streamlit/streamlit/</loc>
          <lastmod>2024-10-04</lastmod>
     </url>
 </urlset>
