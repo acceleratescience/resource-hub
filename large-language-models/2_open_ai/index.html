@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://docs.science.ai.cam.ac.uk/large-language-models/2_open_ai/">
       
       
-        <link rel="prev" href="../1_setting_up/">
+        <link rel="prev" href="../setting-up/azure/">
       
       
         <link rel="next" href="../prompting/3_prompting/">
@@ -269,16 +269,19 @@
   
   
   
-    <li class="md-tabs__item">
-      <a href="../1_setting_up/" class="md-tabs__link">
-        
+    
+    
+      <li class="md-tabs__item">
+        <a href="../setting-up/overview/" class="md-tabs__link">
+          
   
     
   
   Setting up
 
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
@@ -545,16 +548,160 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../1_setting_up/" class="md-nav__link">
+    
+    
+      
         
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
   
   <span class="md-ellipsis">
     Setting up
   </span>
   
 
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Setting up
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setting-up/overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setting-up/codespaces/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Codespaces
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setting-up/runpod/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Runpod
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setting-up/nvidia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nvidia NIMs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setting-up/azure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure AI Studio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -692,6 +839,8 @@
       
         
       
+        
+      
     
     
       
@@ -758,6 +907,27 @@
   
   <span class="md-ellipsis">
     Prompt Templates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prompting/prompting_exercise/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Generating fake Nature abstracts
   </span>
   
 
@@ -1464,7 +1634,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [86]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-1">
@@ -1531,7 +1701,7 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")</div>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [87]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-2">
@@ -1545,7 +1715,7 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")</div>
 </clipboard-copy>
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">system_prompt</span> <span class="o">=</span> <span class="s2">"You are Matsuo Basho, the great Japanese haiku poet."</span>
-<span class="n">user_query</span> <span class="o">=</span> <span class="s2">"Can you give me a haiku about a Samurai cat."</span>
+<span class="n">user_query</span> <span class="o">=</span> <span class="s2">"Can you give me a poem about a Samurai cat."</span>
 
 <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
   <span class="n">model</span><span class="o">=</span><span class="s2">"gpt-4o-mini"</span><span class="p">,</span>
@@ -1559,7 +1729,7 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")</div>
 <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
 </pre></div>
 <div class="clipboard-copy-txt" id="cell-2">system_prompt = "You are Matsuo Basho, the great Japanese haiku poet."
-user_query = "Can you give me a haiku about a Samurai cat."
+user_query = "Can you give me a poem about a Samurai cat."
 
 response = client.chat.completions.create(
   model="gpt-4o-mini",
@@ -1582,9 +1752,9 @@ print(response.choices[0].message.content)</div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Silent paws tread soft,  
-Moonlight gleams on sharpened claws—  
-Honor in each pounce.  
+<pre>In moonlit silence,  
+The Samurai cat prowls near,  
+Claws sharp as his blade.  
 </pre>
 </div>
 </div>
@@ -2365,7 +2535,7 @@ These results highlight the critical dynamics and self-organized behavior of the
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../1_setting_up/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Setting up">
+          <a href="../setting-up/azure/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Azure AI Studio">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2375,7 +2545,7 @@ These results highlight the critical dynamics and self-organized behavior of the
                 Previous
               </span>
               <div class="md-ellipsis">
-                Setting up
+                Azure AI Studio
               </div>
             </div>
           </a>
