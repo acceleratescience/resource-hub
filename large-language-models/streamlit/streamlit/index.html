@@ -1221,9 +1221,42 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#adding-an-image" class="md-nav__link">
+  <a href="#customization" class="md-nav__link">
     <span class="md-ellipsis">
-      Adding an image
+      Customization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Customization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#temperature-and-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Temperature and model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tracking-tokens-and-spending" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tracking tokens and spending
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-thoughts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Final thoughts
     </span>
   </a>
   
@@ -1345,7 +1378,7 @@
 <div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>streamlit<span class="w"> </span>run<span class="w"> </span>my_app.py
 </code></pre></div>
 <p>This means that we can't run things in a jupyter notebook, and will have to use <code>.py</code> files. But that's OK, because that's really where we should be doing most of our developing anyway.</p>
-<p>Streamlit has an extensive documentation library that can help you develop specific applications. During this section, we will set out with a goal in mind, and just address things as they come up. Our goal for this section is to develop an application that when we input some topic sentence, an abstract is given to us, along with an AI generated image that describes the abstract!</p>
+<p>Streamlit has an extensive documentation library that can help you develop specific applications. During this section, we will set out with a goal in mind, and just address things as they come up. Our goal for this section is to develop an application that when we input some topic sentence, an abstract is given to us. We will then see what basic customization we can do.</p>
 <h2 id="first-steps">First steps</h2>
 <p>In the first go, we will just focus on showing the abstract on the screen.</p>
 <h3 id="getting-started">Getting started</h3>
@@ -1354,37 +1387,19 @@
 <p>From here on, you can follow along in order, adding the code to you application.</p>
 <h3 id="imports">Imports</h3>
 <p>We need the following imports:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
 <span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
 <span class="kn">from</span> <span class="nn">jinja2</span> <span class="kn">import</span> <span class="n">Environment</span><span class="p">,</span> <span class="n">FileSystemLoader</span><span class="p">,</span> <span class="n">select_autoescape</span><span class="p">,</span> <span class="n">TemplateNotFound</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">dotenv</span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <p>and we also need to load the environment variables</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">dotenv</span><span class="o">.</span><span class="n">load_dotenv</span><span class="p">()</span>
-</code></pre></div></td></tr></table></div>
+<div class="highlight"><pre><span></span><code><span class="n">dotenv</span><span class="o">.</span><span class="n">load_dotenv</span><span class="p">()</span>
+</code></pre></div>
 <h3 id="functions-from-the-prompting-section">Functions from the <strong>Prompting</strong> section</h3>
 <p>We can just copy over the previous functions:</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Generate the chat response</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">chat_response</span><span class="p">(</span><span class="n">system_prompt</span> <span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">user_prompt</span> <span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">model</span> <span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">temperature</span> <span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<div class="highlight"><span class="filename">Generate the chat response</span><pre><span></span><code><span class="k">def</span> <span class="nf">chat_response</span><span class="p">(</span><span class="n">system_prompt</span> <span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">user_prompt</span> <span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">model</span> <span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">temperature</span> <span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
     <span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">()</span>
 
     <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
@@ -1398,19 +1413,8 @@
     <span class="p">)</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span>
 
     <span class="k">return</span> <span class="n">response</span>
-</code></pre></div></td></tr></table></div>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Generate the abstract</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">generate_abstract</span><span class="p">(</span><span class="n">topic</span> <span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">Generate the abstract</span><pre><span></span><code><span class="k">def</span> <span class="nf">generate_abstract</span><span class="p">(</span><span class="n">topic</span> <span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
     <span class="n">generation_system_prompt</span> <span class="o">=</span> <span class="n">load_template</span><span class="p">(</span><span class="s2">&quot;./prompts/system.jinja&quot;</span><span class="p">,</span> <span class="p">{})</span>
     <span class="n">generation_user_prompt</span> <span class="o">=</span> <span class="n">load_template</span><span class="p">(</span>
         <span class="s2">&quot;./prompts/user.jinja&quot;</span><span class="p">,</span>
@@ -1422,24 +1426,10 @@
     <span class="n">fake_abstract</span> <span class="o">=</span> <span class="n">chat_response</span><span class="p">(</span><span class="n">generation_system_prompt</span><span class="p">,</span> <span class="n">generation_user_prompt</span><span class="p">,</span> <span class="s2">&quot;gpt-4o-mini&quot;</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">fake_abstract</span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <h3 id="template-loading">Template Loading</h3>
 <p>We also use the same template loading function, but with some minor changes. Firstly, it's good to just add some error handling, and also we need to tell Jinja where to look. This will be required for running the application in Codespaces.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Get the template</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span>
-<span class="normal">45</span>
-<span class="normal">46</span>
-<span class="normal">47</span>
-<span class="normal">48</span>
-<span class="normal">49</span>
-<span class="normal">50</span>
-<span class="normal">51</span>
-<span class="normal">52</span>
-<span class="normal">53</span>
-<span class="normal">54</span>
-<span class="normal">55</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">load_template</span><span class="p">(</span><span class="n">template_filepath</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">arguments</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<div class="highlight"><span class="filename">Get the template</span><pre><span></span><code><span class="k">def</span> <span class="nf">load_template</span><span class="p">(</span><span class="n">template_filepath</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">arguments</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="c1"># Get the directory of the current script</span>
         <span class="n">current_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">))</span> <span class="c1"># (1)!</span>
@@ -1454,34 +1444,22 @@
     <span class="k">except</span> <span class="n">TemplateNotFound</span><span class="p">:</span>
         <span class="n">st</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Template file not found: </span><span class="si">{</span><span class="n">template_filepath</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="kc">None</span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <ol>
 <li>This is the only difference. We essentially have to find the absolute path of the current directory that the application is running in, so we can then find the path of the jinja template <em>relative</em> to that path.</li>
 </ol>
 <h3 id="the-streamlit-components">The Streamlit components</h3>
 <p>Now we start actually adding the streamlit parts, and it's actually really simple. Streamlit has a number of predefined building blocks for us to use, also called <em>widgets</em>.</p>
 <p>The first two are the <code>title</code> and <code>text_input</code> widgets.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Title and input</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">58</span>
-<span class="normal">59</span>
-<span class="normal">60</span>
-<span class="normal">61</span>
-<span class="normal">62</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Streamlit app</span>
+<p><div class="highlight"><span class="filename">Title and input</span><pre><span></span><code><span class="c1"># Streamlit app</span>
 <span class="n">st</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Fake Abstract Generator&quot;</span><span class="p">)</span>
 
 <span class="c1"># User input</span>
 <span class="n">topic</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">text_input</span><span class="p">(</span><span class="s2">&quot;Enter a topic sentence:&quot;</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 The title and a text input field will appear at the top of the page. The <code>text_input</code> widget will be a single line, but if you want a commonly used "short answer" style text box, then you can use <code>text_area</code>. They do the same thing; the only difference is aesthetics.</p>
 <p>The next widget is a <code>button</code>. In Streamlit, whenever something is interacted with on the screen, your script is run again. This is essentially what we want - everytime someone presses the button, we want to grab the input text and generate the abstract.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Button</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">64</span>
-<span class="normal">65</span>
-<span class="normal">66</span>
-<span class="normal">67</span>
-<span class="normal">68</span>
-<span class="normal">69</span>
-<span class="normal">70</span>
-<span class="normal">71</span>
-<span class="normal">72</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Generate button</span>
+<div class="highlight"><span class="filename">Button</span><pre><span></span><code><span class="c1"># Generate button</span>
 <span class="k">if</span> <span class="n">st</span><span class="o">.</span><span class="n">button</span><span class="p">(</span><span class="s2">&quot;Generate Abstract&quot;</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">topic</span><span class="p">:</span>
         <span class="k">with</span> <span class="n">st</span><span class="o">.</span><span class="n">spinner</span><span class="p">(</span><span class="s2">&quot;Generating abstract...&quot;</span><span class="p">):</span>
@@ -1490,7 +1468,7 @@ The title and a text input field will appear at the top of the page. The <code>t
         <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">abstract</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">st</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Please enter a topic sentence.&quot;</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <p>What you can nest inside the button:
 - Transient messages that immediately disappear.
 - Once-per-click processes that saves data to session state, a file, or a database.</p>
@@ -1502,19 +1480,145 @@ The title and a text input field will appear at the top of the page. The <code>t
 <p>If we want to maintain the button state while we are interacting with other things, we have to use something called <code>session_state</code>. This will persist states across runs. We will use this later...but not now...</p>
 <p>If what you want is like a toggle switch, then there is a <code>checkbox</code>.</p>
 <p>Finally, we add a <code>sidebar</code>. These things are pretty important, and can be used to manage multipage applications, and store information about your session. They are also commonly where you can put controls like sliders and checkboxes.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Extra decoration</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">74</span>
-<span class="normal">75</span>
-<span class="normal">76</span>
-<span class="normal">77</span>
-<span class="normal">78</span>
-<span class="normal">79</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Add some information about the app</span>
+<div class="highlight"><span class="filename">Extra decoration</span><pre><span></span><code><span class="c1"># Add some information about the app</span>
 <span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="o">.</span><span class="n">header</span><span class="p">(</span><span class="s2">&quot;About&quot;</span><span class="p">)</span>
 <span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
     <span class="s2">&quot;This app generates fake abstracts based on a given topic sentence using AI. &quot;</span>
     <span class="s2">&quot;Enter a topic and click &#39;Generate Abstract&#39; to see the result.&quot;</span>
 <span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-<h2 id="adding-an-image">Adding an image</h2>
+</code></pre></div>
+<p>We can run this by typing in the terminal:</p>
+<div class="highlight"><pre><span></span><code>streamlit<span class="w"> </span>run<span class="w"> </span>abstract-application/app.py
+</code></pre></div>
+<p>You should see something that looks like the image below</p>
+<p><img alt="" src="../../imgs/fake-abstract-1.png" /></p>
+<p>Enter some text in the text bar and the application will generate some text and display it on screen.</p>
+<h2 id="customization">Customization</h2>
+<p>We will start with some basic things, like changing the temperature or the model type, then add some functionality like the ability to display tokens used, and the price.</p>
+<h3 id="temperature-and-model">Temperature and model</h3>
+<p>We will add a dropdown box and slider to select the model and the temperature. This is pretty easy, and we just need to add the following:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Sidebar controls</span>
+<span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="o">.</span><span class="n">header</span><span class="p">(</span><span class="s2">&quot;Settings&quot;</span><span class="p">)</span>
+<span class="n">temperature</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="o">.</span><span class="n">slider</span><span class="p">(</span><span class="s2">&quot;Temperature&quot;</span><span class="p">,</span> <span class="n">min_value</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">max_value</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="o">.</span><span class="n">selectbox</span><span class="p">(</span><span class="s2">&quot;Model&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;gpt-4o-mini&quot;</span><span class="p">,</span> <span class="s2">&quot;gpt-4o&quot;</span><span class="p">])</span>
+</code></pre></div>
+<p>We cap out the temperature at <code>2.0</code> because OpenAI won't let us set the temperature any higher - you'll get a <code>Error code: 400</code> if you try. Don't worry though, anything above <code>1.2</code> is usually unhinged.</p>
+<p>We also need to modify the <code>generate_abstract</code> function so that it can take the <code>model</code> and <code>temperature</code> as arguments. If you run this, notice that if you change the temperature or model, the script will rerun, and you'll lose the abstract. You can just add the functionality to save the abstracts to a directory if you want.</p>
+<p>I don't like the fact that <code>app.py</code> appears in the brower tab. To rename it, at the top of the <code>app.py</code> file, before the first function, write the following:</p>
+<div class="highlight"><pre><span></span><code><span class="n">st</span><span class="o">.</span><span class="n">set_page_config</span><span class="p">(</span><span class="n">page_title</span><span class="o">=</span><span class="s2">&quot;Abstractinator&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="tracking-tokens-and-spending">Tracking tokens and spending</h3>
+<p>We need to keep track of tokens and costs across multiple generations. This means we need to use the <code>session_state</code> functionality. Before doing this, we will just import the libraries that we need:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">yaml</span>
+<span class="kn">import</span> <span class="nn">json</span>
+</code></pre></div>
+<p>We should define these things first in the script, and we want to keep track of sent and received tokens:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Initialize session state</span>
+<span class="k">if</span> <span class="s1">&#39;total_tokens&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="p">:</span>
+    <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="o">.</span><span class="n">total_tokens</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">if</span> <span class="s1">&#39;total_cost&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="p">:</span>
+    <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="o">.</span><span class="n">total_cost</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">if</span> <span class="s1">&#39;sent_tokens&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="p">:</span>
+    <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="o">.</span><span class="n">sent_tokens</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">if</span> <span class="s1">&#39;sent_cost&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="p">:</span>
+    <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="o">.</span><span class="n">sent_cost</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">if</span> <span class="s1">&#39;received_tokens&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="p">:</span>
+    <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="o">.</span><span class="n">received_tokens</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">if</span> <span class="s1">&#39;received_cost&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="p">:</span> 
+    <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="o">.</span><span class="n">received_cost</span> <span class="o">=</span> <span class="mi">0</span>
+</code></pre></div>
+<p>Next, we might want to define a <em>config</em> file. This file is responsible for defining various configuration parameters for our application:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">costs</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">gpt-4o-mini</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.00015</span>
+<span class="w">    </span><span class="nt">output</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0006</span>
+<span class="w">  </span><span class="nt">gpt-4o</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0025</span>
+<span class="w">    </span><span class="nt">output</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.01</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These costs are per 1,000 tokens and are accurate from October, 2024. To check up to date costs, please visit the <a href="https://openai.com/api/pricing/">OpenAI Pricing</a> page.</p>
+</div>
+<p>This will allow us to define these configuration parameters externally. We now need to load this config file into the session state:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># add config yaml to session_state</span>
+<span class="k">if</span> <span class="s1">&#39;config&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="p">:</span>
+    <span class="n">current_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">))</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">current_dir</span><span class="p">,</span> <span class="s2">&quot;config.yml&quot;</span><span class="p">),</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">config_file</span><span class="p">:</span>
+        <span class="n">config</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">safe_load</span><span class="p">(</span><span class="n">config_file</span><span class="p">)</span>
+    <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="o">.</span><span class="n">config</span> <span class="o">=</span> <span class="n">config</span>
+</code></pre></div>
+<p>We add a new function to update usage statistics:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">update_usage_statistics</span><span class="p">(</span><span class="n">tokens</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
+    <span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="o">.</span><span class="n">header</span><span class="p">(</span><span class="s2">&quot;Usage Statistics&quot;</span><span class="p">)</span>
+    <span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="o">.</span><span class="n">metric</span><span class="p">(</span><span class="s2">&quot;Total Tokens Sent&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="o">.</span><span class="n">sent_tokens</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="o">.</span><span class="n">metric</span><span class="p">(</span><span class="s2">&quot;Total Tokens Received&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="o">.</span><span class="n">received_tokens</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="o">.</span><span class="n">metric</span><span class="p">(</span><span class="s2">&quot;Total Tokens Used&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="o">.</span><span class="n">total_tokens</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="o">.</span><span class="n">metric</span><span class="p">(</span><span class="s2">&quot;Total Cost ($)&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">st</span><span class="o">.</span><span class="w"> </span><span class="n">session_state</span><span class="o">.</span><span class="n">total_cost</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;session_state.json&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+</code></pre></div>
+<p>and a function to calculate costs:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">update_costs</span><span class="p">(</span><span class="n">tokens</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
+    <span class="n">sent_tokens</span> <span class="o">=</span> <span class="n">tokens</span><span class="o">.</span><span class="n">prompt_tokens</span>
+    <span class="n">received_tokens</span> <span class="o">=</span> <span class="n">tokens</span><span class="o">.</span><span class="n">completion_tokens</span>
+    <span class="n">total_tokens</span> <span class="o">=</span> <span class="n">sent_tokens</span> <span class="o">+</span> <span class="n">received_tokens</span>
+
+    <span class="n">sent_cost</span> <span class="o">=</span> <span class="n">sent_tokens</span> <span class="o">*</span> <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;costs&quot;</span><span class="p">][</span><span class="n">model</span><span class="p">][</span><span class="s1">&#39;input&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="mi">1000</span>
+    <span class="n">received_cost</span> <span class="o">=</span> <span class="n">received_tokens</span> <span class="o">*</span> <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;costs&quot;</span><span class="p">][</span><span class="n">model</span><span class="p">][</span><span class="s1">&#39;output&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="mi">1000</span>
+    <span class="n">total_cost</span> <span class="o">=</span> <span class="n">sent_cost</span> <span class="o">+</span> <span class="n">received_cost</span> <span class="o">/</span> <span class="mi">1000</span>
+
+    <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="o">.</span><span class="n">total_tokens</span> <span class="o">+=</span> <span class="n">total_tokens</span>
+    <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="o">.</span><span class="n">total_cost</span> <span class="o">+=</span> <span class="n">total_cost</span>
+    <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="o">.</span><span class="n">sent_tokens</span> <span class="o">+=</span> <span class="n">sent_tokens</span>
+    <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="o">.</span><span class="n">sent_cost</span> <span class="o">+=</span> <span class="n">sent_cost</span>
+    <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="o">.</span><span class="n">received_tokens</span> <span class="o">+=</span> <span class="n">received_tokens</span>
+    <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="o">.</span><span class="n">received_cost</span> <span class="o">+=</span> <span class="n">received_cost</span>
+</code></pre></div>
+<p>We need to adjust the <code>generate_abstract</code> and <code>chat_reponse</code> functions to return the content <em>as well as</em> the tokens. Here are the updated functions:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">chat_response</span><span class="p">(</span><span class="n">system_prompt</span> <span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">user_prompt</span> <span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">model</span> <span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">temperature</span> <span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">()</span>
+
+    <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+        <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span>
+        <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+            <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;system&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">system_prompt</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">user_prompt</span><span class="p">}</span>
+        <span class="p">],</span>
+        <span class="n">temperature</span><span class="o">=</span><span class="n">temperature</span><span class="p">,</span>
+        <span class="n">max_tokens</span><span class="o">=</span><span class="mi">400</span>
+    <span class="p">)</span>
+
+    <span class="n">content</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span>
+    <span class="n">tokens</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">usage</span>
+
+    <span class="k">return</span> <span class="n">content</span><span class="p">,</span> <span class="n">tokens</span>
+
+
+<span class="k">def</span> <span class="nf">generate_abstract</span><span class="p">(</span><span class="n">topic</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">temperature</span><span class="p">):</span>
+    <span class="n">generation_system_prompt</span> <span class="o">=</span> <span class="n">load_template</span><span class="p">(</span><span class="s2">&quot;./prompts/system.jinja&quot;</span><span class="p">,</span> <span class="p">{})</span>
+    <span class="n">generation_user_prompt</span> <span class="o">=</span> <span class="n">load_template</span><span class="p">(</span>
+        <span class="s2">&quot;./prompts/user.jinja&quot;</span><span class="p">,</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;topic&quot;</span><span class="p">:</span> <span class="n">topic</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">)</span>
+
+    <span class="n">fake_abstract</span><span class="p">,</span> <span class="n">tokens</span> <span class="o">=</span> <span class="n">chat_response</span><span class="p">(</span><span class="n">generation_system_prompt</span><span class="p">,</span> <span class="n">generation_user_prompt</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">temperature</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">fake_abstract</span><span class="p">,</span> <span class="n">tokens</span>
+</code></pre></div>
+<p>Finally we add two new lines. One below the call to <code>generate_abstract(topic, model, temperature)</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">update_costs</span><span class="p">(</span><span class="n">tokens</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
+</code></pre></div>
+<p>and on the final line:</p>
+<div class="highlight"><pre><span></span><code><span class="n">update_usage_statistics</span><span class="p">()</span>
+</code></pre></div>
+<p>Your overall page should look something like this:</p>
+<p><img alt="" src="../../imgs/fake-abstract-2.png" /></p>
+<h2 id="final-thoughts">Final thoughts</h2>
+<p>This is just a starting point for Streamlit - there are very many customization options available. A good next step from here if you want to test your skills is to build a fully functioning chat model using the lessons learned here, and using the lessons from the States and Storage sections.</p>
 
 
 
