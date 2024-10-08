@@ -2,102 +2,110 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://docs.science.ai.cam.ac.uk/large-language-models/</loc>
-         <lastmod>2024-10-06</lastmod>
+         <lastmod>2024-10-08</lastmod>
     </url>
     <url>
          <loc>https://docs.science.ai.cam.ac.uk/large-language-models/2_open_ai/</loc>
-         <lastmod>2024-10-06</lastmod>
+         <lastmod>2024-10-08</lastmod>
     </url>
     <url>
          <loc>https://docs.science.ai.cam.ac.uk/large-language-models/5_pydantic/</loc>
-         <lastmod>2024-10-06</lastmod>
+         <lastmod>2024-10-08</lastmod>
     </url>
     <url>
          <loc>https://docs.science.ai.cam.ac.uk/large-language-models/notebook_example/</loc>
-         <lastmod>2024-10-06</lastmod>
+         <lastmod>2024-10-08</lastmod>
     </url>
     <url>
          <loc>https://docs.science.ai.cam.ac.uk/large-language-models/p1_doc-validation/</loc>
-         <lastmod>2024-10-06</lastmod>
+         <lastmod>2024-10-08</lastmod>
     </url>
     <url>
          <loc>https://docs.science.ai.cam.ac.uk/large-language-models/Home/LICENSE/</loc>
-         <lastmod>2024-10-06</lastmod>
+         <lastmod>2024-10-08</lastmod>
     </url>
     <url>
          <loc>https://docs.science.ai.cam.ac.uk/large-language-models/Home/about/</loc>
-         <lastmod>2024-10-06</lastmod>
+         <lastmod>2024-10-08</lastmod>
     </url>
     <url>
          <loc>https://docs.science.ai.cam.ac.uk/large-language-models/Home/workshop/</loc>
-         <lastmod>2024-10-06</lastmod>
+         <lastmod>2024-10-08</lastmod>
     </url>
     <url>
          <loc>https://docs.science.ai.cam.ac.uk/large-language-models/data-storage-and-ingestion/9_documents/</loc>
-         <lastmod>2024-10-06</lastmod>
+         <lastmod>2024-10-08</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.science.ai.cam.ac.uk/large-language-models/evaluation/10_evaluation/</loc>
+         <lastmod>2024-10-08</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.science.ai.cam.ac.uk/large-language-models/evaluation/utils/</loc>
+         <lastmod>2024-10-08</lastmod>
     </url>
     <url>
          <loc>https://docs.science.ai.cam.ac.uk/large-language-models/prompting/</loc>
-         <lastmod>2024-10-06</lastmod>
+         <lastmod>2024-10-08</lastmod>
     </url>
     <url>
          <loc>https://docs.science.ai.cam.ac.uk/large-language-models/prompting/3_prompting/</loc>
-         <lastmod>2024-10-06</lastmod>
+         <lastmod>2024-10-08</lastmod>
     </url>
     <url>
          <loc>https://docs.science.ai.cam.ac.uk/large-language-models/prompting/4_prompt_templates/</loc>
-         <lastmod>2024-10-06</lastmod>
+         <lastmod>2024-10-08</lastmod>
     </url>
     <url>
          <loc>https://docs.science.ai.cam.ac.uk/large-language-models/prompting/prompting_exercise/</loc>
-         <lastmod>2024-10-06</lastmod>
+         <lastmod>2024-10-08</lastmod>
     </url>
     <url>
          <loc>https://docs.science.ai.cam.ac.uk/large-language-models/setting-up/azure/</loc>
-         <lastmod>2024-10-06</lastmod>
+         <lastmod>2024-10-08</lastmod>
     </url>
     <url>
          <loc>https://docs.science.ai.cam.ac.uk/large-language-models/setting-up/codespaces/</loc>
-         <lastmod>2024-10-06</lastmod>
+         <lastmod>2024-10-08</lastmod>
     </url>
     <url>
          <loc>https://docs.science.ai.cam.ac.uk/large-language-models/setting-up/nvidia/</loc>
-         <lastmod>2024-10-06</lastmod>
+         <lastmod>2024-10-08</lastmod>
     </url>
     <url>
          <loc>https://docs.science.ai.cam.ac.uk/large-language-models/setting-up/overview/</loc>
-         <lastmod>2024-10-06</lastmod>
+         <lastmod>2024-10-08</lastmod>
     </url>
     <url>
          <loc>https://docs.science.ai.cam.ac.uk/large-language-models/setting-up/runpod/</loc>
-         <lastmod>2024-10-06</lastmod>
+         <lastmod>2024-10-08</lastmod>
     </url>
     <url>
          <loc>https://docs.science.ai.cam.ac.uk/large-language-models/states/</loc>
-         <lastmod>2024-10-06</lastmod>
+         <lastmod>2024-10-08</lastmod>
     </url>
     <url>
          <loc>https://docs.science.ai.cam.ac.uk/large-language-models/states/6_states/</loc>
-         <lastmod>2024-10-06</lastmod>
+         <lastmod>2024-10-08</lastmod>
     </url>
     <url>
          <loc>https://docs.science.ai.cam.ac.uk/large-language-models/states/7_summary/</loc>
-         <lastmod>2024-10-06</lastmod>
+         <lastmod>2024-10-08</lastmod>
     </url>
     <url>
          <loc>https://docs.science.ai.cam.ac.uk/large-language-models/states/8_data_storage/</loc>
-         <lastmod>2024-10-06</lastmod>
+         <lastmod>2024-10-08</lastmod>
     </url>
     <url>
          <loc>https://docs.science.ai.cam.ac.uk/large-language-models/streamlit/</loc>
-         <lastmod>2024-10-06</lastmod>
+         <lastmod>2024-10-08</lastmod>
     </url>
     <url>
          <loc>https://docs.science.ai.cam.ac.uk/large-language-models/streamlit/streamlit/</loc>
-         <lastmod>2024-10-06</lastmod>
+         <lastmod>2024-10-08</lastmod>
     </url>
     <url>
          <loc>https://docs.science.ai.cam.ac.uk/large-language-models/streamlit/abstract-application/app/</loc>
-         <lastmod>2024-10-06</lastmod>
+         <lastmod>2024-10-08</lastmod>
     </url>
 </urlset>
