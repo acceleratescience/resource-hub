@@ -736,6 +736,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Azure AI Studio
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -745,6 +756,70 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-sign-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Sign up
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-login-to-ai-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Login to AI Studio
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-deploy-as-a-serverless-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Deploy as a serverless API
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-consume" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Consume
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-delete" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Delete
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1259,7 +1334,53 @@
 
 
 <h1 id="azure-ai-studio">Azure AI Studio</h1>
-<p>Coming soon!</p>
+<p>There are currently 3 major model as a service (MaaS) providers (there are probably more, but these are currently the main ones):</p>
+<ul>
+<li><strong>Amazon</strong> AWS Bedrock</li>
+<li><strong>Google</strong> GCP Vertex AI</li>
+<li><strong>Microsoft</strong> Azure AI Studio</li>
+</ul>
+<p>Everyone will have a different opinion on which one is best, and which offers the best services. But essentially: they are all the same! They all have a learning curve; they all have roughly similar pricing structures; they all offer similar online courses; they are all annoying in some way.</p>
+<p>Here, we focus on Microsoft Azure AI Studio. The main advantages of Azure are:</p>
+<ul>
+<li>The easy use of the OpenAI API rather than a custom one (as is the case for AWS and GCP);</li>
+<li>The ease of deploying serverless endpoints;</li>
+<li>The range of models (including OpenAI models).</li>
+</ul>
+<p>The rabbithole for cloud services is dark (and potentially full of deranged) rabbits, so we will not go into significant details, instead focusing on getting up and running with AI Studio, and deploying an endpoint. If you want to learn more about Azure services in general, they have an accessible <a href="https://learn.microsoft.com/en-us/collections/n6ga8m0jkgrwk">introductory course</a>.</p>
+<h2 id="1-sign-up">1. Sign up</h2>
+<p>You will need to <a href="https://azure.microsoft.com/en-gb/pricing/purchase-options/azure-account">sign up for an Azure account</a> and you will need to register a payment method. Most cloud providers will give you a free trial for a limited amount of time and/or credits.</p>
+<h2 id="2-login-to-ai-studio">2. Login to AI Studio</h2>
+<p>Once you've signed up to Azure, you can login to AI Studio, and browse the model catalogue, which should look something like this:</p>
+<p><img alt="" src="../../imgs/azure-models.png" /></p>
+<h2 id="3-deploy-as-a-serverless-api">3. Deploy as a serverless API</h2>
+<p>When you deploy a model to an endpoint, you will be able to query it as you would an OpenAI model. Select a model (in the example below it is <code>Llama-3.1-8B-Instruct</code>), and hit deploy.</p>
+<p><img alt="" src="../../imgs/azure-llama.png" /></p>
+<p>You will have 2 deployment options:</p>
+<p><img alt="" src="../../imgs/azure-deploy.png" /></p>
+<p>For now, hit the serverless API option. If this is your first time, you will have to create a new project and a new hub. You will then be given the option of adding or creating a new subscription, resource, group, and AI Service. This is an Azure-backed service, so storage and a key vault will also be created for you.</p>
+<p>Once everything is set up, you can "Subscribe and Deploy". You will now be given a Deployment name, and the option to disable content filtering (content filtering is a billed service). AI studio will now create an endpoint that you can send requests to using the OpenAI API.</p>
+<h2 id="4-consume">4. Consume</h2>
+<p>To consume your services, you will need to add two things to you <code>.env</code> file:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">AZURE_API_KEY</span><span class="o">=</span><span class="s2">&quot;your-api-key&quot;</span>
+<span class="nv">AZURE_URL</span><span class="o">=</span><span class="s2">&quot;https://&lt;name-of-model&gt;.&lt;region&gt;.models.ai.azure.com/v1/&quot;</span>
+</code></pre></div>
+<p>The Url can be found on the Deployments page. You then initialize the OpenAI API client:</p>
+<div class="highlight"><pre><span></span><code><span class="n">dotenv</span><span class="o">.</span><span class="n">load_dotenv</span><span class="p">()</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">(</span>
+    <span class="n">base_url</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;AZURE_URL&quot;</span><span class="p">),</span>
+    <span class="n">api_key</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;AZURE_API_KEY&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">completion</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;azureai&quot;</span><span class="p">,</span>
+    <span class="n">messages</span><span class="o">=</span><span class="n">messages</span>
+<span class="p">)</span>
+</code></pre></div>
+<p>And that's it!</p>
+<h2 id="5-delete">5. Delete</h2>
+<p>To delete your endpoint, you need to hit "Delete" in the deployment page in AI Studio, and you may want to delete other resources allocated in the Azure Dashboard as well.</p>
 
 
 
