@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://docs.science.ai.cam.ac.uk/diffusion-models/</loc>
+         <lastmod>2024-10-22</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.science.ai.cam.ac.uk/diffusion-models/BuildingBlocks/1_VAEs/</loc>
+         <lastmod>2024-10-22</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.science.ai.cam.ac.uk/diffusion-models/BuildingBlocks/building-blocks/</loc>
+         <lastmod>2024-10-22</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.science.ai.cam.ac.uk/diffusion-models/Home/LICENSE/</loc>
+         <lastmod>2024-10-22</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.science.ai.cam.ac.uk/diffusion-models/Home/about/</loc>
+         <lastmod>2024-10-22</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.science.ai.cam.ac.uk/diffusion-models/Home/workshop/</loc>
+         <lastmod>2024-10-22</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.science.ai.cam.ac.uk/diffusion-models/Introduction/Introduction/</loc>
+         <lastmod>2024-10-22</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.science.ai.cam.ac.uk/diffusion-models/Physics/Physics/</loc>
+         <lastmod>2024-10-22</lastmod>
+    </url>
+</urlset>
