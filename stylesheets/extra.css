@@ -1,0 +1,29 @@
+/* Beginner - Green */
+.grid.cards.newcomer > ul > li:hover {
+    background-color: rgba(76, 175, 80, 0.1);
+    border-color: #4CAF50;
+}
+
+.grid.cards.newcomer > ul > li {
+    border-left-color: #4CAF50 !important;
+}
+
+/* Intermediate - Orange/Yellow */
+.grid.cards.intermediate > ul > li:hover {
+    background-color: rgba(255, 152, 0, 0.1);
+    border-color: #FF9800;
+}
+
+.grid.cards.intermediate > ul > li {
+    border-left-color: #FF9800 !important;
+}
+
+/* Advanced - Red */
+.grid.cards.proficient > ul > li:hover {
+    background-color: rgba(244, 67, 54, 0.1);
+    border-color: #F44336;
+}
+
+.grid.cards.proficient > ul > li {
+    border-left-color: #F44336 !important;
+}
