@@ -64,7 +64,7 @@ Accelerate's 1-day workshops are created by the Accelerate Programme's Machine L
     Find out how LLMs work, and how you might use them in your research.
 
 
--   [__Diffusion Models__](https://acceleratescience.github.io/large-language-models)<br>`INTERMEDIATE`
+-   [__Diffusion Models__](https://docs.science.ai.cam.ac.uk/diffusion-models)<br>`INTERMEDIATE`
 
     ---
     Explore diffusion models with Stable Diffusion. An overview of VAEs, UNet, CLIP.
