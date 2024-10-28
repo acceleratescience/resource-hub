@@ -9,6 +9,8 @@ This page collects software resources that you can build on and so get started q
 
 ## Resources
 
+[CONTACT US :fontawesome-solid-paper-plane:](mailto:accelerate-mle@cst.cam.ac.uk){ .md-button }
+
 <div class="grid cards" markdown>
 
 -   :fontawesome-solid-mug-hot:{ .lg .middle } [__AI Cafe__](https://acceleratescience.github.io/machine-learning-clinic)
