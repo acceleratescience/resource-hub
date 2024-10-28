@@ -24,7 +24,7 @@
 <br />
 <div align="center">
   <a href="https://acceleratescience.github.io/">
-    <img src="./imgs/full_acc.png" alt="Logo" height=80>
+    <img src="./docs/imgs/full_acc.png" alt="Logo" height=80>
   </a>
 
   <h3 align="center">Accelerate Science Resource Hub</h3>
