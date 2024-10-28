@@ -10,6 +10,7 @@ theme:
   favicon: imgs/trace.svg
   name: material
   logo: imgs/trace.svg
+  # custom_dir: overrides
   features:
     - search.suggest
     - search.highlight
@@ -88,6 +89,9 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
+
+
+
 extra:
   consent:
       title: Cookie consent
