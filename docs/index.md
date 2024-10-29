@@ -1,3 +1,7 @@
+<a href="https://acceleratescience.github.io/">
+    <img src="./imgs/full_acc.png" alt="Logo" width=500>
+</a>
+
 # AI Resource Hub
 
 **Welcome to Accelerate Science's Resource Hub for researchers.**
