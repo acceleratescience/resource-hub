@@ -97,7 +97,7 @@ Accelerate's 1-day workshops are created by the Accelerate Programme's Machine L
 
 <div class="grid cards proficient" markdown>
 
--   [__Large Language Models Hands On__](https://docs.science.ai.cam.ac.uk/large-language-models/) `PROFICIENT`
+-   [__Large Language Models Hands On__](https://docs.science.ai.cam.ac.uk/hands-on-llms/) `PROFICIENT`
 
     ---
     Gets hands on experience using LLMs - OpenAI, Pydantic, Jinja, databases, and more...
