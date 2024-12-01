@@ -82,7 +82,7 @@ Accelerate's 1-day workshops are created by the Accelerate Programme's Machine L
     Get some experience with using machine learning models on some real data.
 
 
--   [__Docker for Science__]()<br>`INTERMEDIATE`
+-   [__Docker for Science__](https://docs.science.ai.cam.ac.uk/docker-for-science/)<br>`INTERMEDIATE`
 
     ---
     Learn the basics of Docker and how to make reproducible software.
