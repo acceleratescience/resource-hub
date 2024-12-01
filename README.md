@@ -159,7 +159,7 @@ graph TD
     click C href "https://docs.science.ai.cam.ac.uk/large-language-models/" _blank
     click D href "https://docs.science.ai.cam.ac.uk/diffusion-models/" _blank
     click E href "https://docs.science.ai.cam.ac.uk/packaging-publishing/" _blank
-    click F href "https://docs.science.ai.cam.ac.uk/training/" _blank
+    click F href "https://docs.science.ai.cam.ac.uk/docker-for-science/" _blank
     click G href "https://docs.science.ai.cam.ac.uk/training/" _blank
     click B1 href "https://github.com/acceleratescience/large-language-models" _blank
     click C1 href "https://github.com/acceleratescience/hands-on-llms" _blank
