@@ -965,11 +965,6 @@
 <span class="c"># Copy the entire project</span>
 <span class="k">COPY</span><span class="w"> </span>.<span class="w"> </span>.
 
-<span class="c"># Create non-root user for security</span>
-<span class="k">RUN</span><span class="w"> </span>useradd<span class="w"> </span>-m<span class="w"> </span>jupyter<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>chown<span class="w"> </span>-R<span class="w"> </span>jupyter:jupyter<span class="w"> </span>/workspace
-<span class="k">USER</span><span class="w"> </span><span class="s">jupyter</span>
-
 <span class="c"># Expose the port Jupyter will run on</span>
 <span class="k">EXPOSE</span><span class="w"> </span><span class="s">8888</span>
 
@@ -1015,13 +1010,6 @@
 <li>First '.' means everything in build context</li>
 <li>Second '.' means copy to current WORKDIR</li>
 <li>Done after requirements for better caching</li>
-</ul>
-<p><strong><code>RUN useradd -m jupyter &amp;&amp; chown -R jupyter:jupyter /workspace</code></strong></p>
-<ul>
-<li>Creates non-root user 'jupyter' for security</li>
-<li><code>-m</code> creates home directory</li>
-<li>Changes ownership of /workspace to this user</li>
-<li>Best practice: don't run as root</li>
 </ul>
 <p><strong><code>USER jupyter</code></strong></p>
 <ul>

@@ -805,6 +805,160 @@
 
 
 <h1 id="devcontainers">Devcontainers</h1>
+<p>In the reproducibility section, we talked about the different levels of reproducibilty. You are probably familiar with things like Python venvs, conda environments, and even virtual machines. These are all ways to isolate your code and dependencies from the rest of your system. But what if you could isolate your code and dependencies in a way that is even more portable and reproducible? That's where devcontainers come in.</p>
+<p>The Visual Studio Code Dev Containers extension lets you use a container as a dev environment. You can open any folder inside (or mounted into) a container inside VSCode. A <code>devcontainer.json</code> file in your project tells VS Code how to access (or create) a development container with a well-defined tool and runtime stack. This container can be used to run an application or to separate tools, libraries, or runtimes needed for working with a codebase.</p>
+<p>Workspace files are mounted from the local file system or copied or cloned into the container. Extensions are installed and run inside the container, where they have full access to the tools, platform, and file system. This means that you can seamlessly switch your entire development environment just by connecting to a different container.</p>
+<p><a>
+    <img src="../imgs/architecture-containers.png" alt="docker-cont">
+</a></p>
+<p>Let's create a bare-bones devcontainer for our python project. Create a new folder:</p>
+<p><div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>.devcontainer
+</code></pre></div>
+and then create a new file:
+<div class="highlight"><pre><span></span><code>touch<span class="w"> </span>.devcontainer/devcontainer.json
+</code></pre></div>
+Now populate it with the following:
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Research Environment&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;build&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;dockerfile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;../Dockerfile&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;context&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;.&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;forwardPorts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">8888</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+This will create a new devcontainer called "Research Environment" that will use the Dockerfile in the parent directory. It will also forward port 8888 to the host machine.</p>
+<p>This is very basic. We don't have much functionality here at all. And how do we even access the actual jupyter lab server? We don't even have the python extension installed in the container! We would also find that any changes to the the stuff inside the container would not be reflected in the host machine. So let's make our experience more enjoyable.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Research Environment&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;build&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;dockerfile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;../Dockerfile&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;context&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;..&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+
+<span class="w">    </span><span class="c1">// Features to add to the dev container</span>
+<span class="w">    </span><span class="nt">&quot;features&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;ghcr.io/devcontainers/features/git:1&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span>
+<span class="w">    </span><span class="p">},</span>
+
+<span class="w">    </span><span class="c1">// Configure tool-specific properties</span>
+<span class="w">    </span><span class="nt">&quot;customizations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;vscode&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;extensions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="s2">&quot;ms-python.python&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="s2">&quot;ms-python.vscode-pylance&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="s2">&quot;ms-python.black-formatter&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="s2">&quot;ms-toolsai.jupyter&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="s2">&quot;github.copilot&quot;</span>
+<span class="w">            </span><span class="p">],</span>
+<span class="w">            </span><span class="nt">&quot;settings&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;python.defaultInterpreterPath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/usr/local/bin/python&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;python.linting.enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;python.formatting.provider&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;black&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;editor.formatOnSave&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;editor.rulers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">88</span><span class="p">]</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+
+<span class="w">    </span><span class="c1">// Use &#39;forwardPorts&#39; to make a list of ports inside the container available locally</span>
+<span class="w">    </span><span class="nt">&quot;forwardPorts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">8888</span><span class="p">],</span>
+
+<span class="w">    </span><span class="c1">// Run commands after container is created</span>
+<span class="w">    </span><span class="nt">&quot;postCreateCommand&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pip install -r requirements.txt&quot;</span><span class="p">,</span>
+
+<span class="w">    </span><span class="c1">// Set environment variables</span>
+<span class="w">    </span><span class="nt">&quot;remoteEnv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;PYTHONPATH&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${containerWorkspaceFolder}&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Now we have <strong>a lot</strong> more functionality!</p>
+<p>Let's look at exactly what is going on here:</p>
+<ol>
+<li>
+<p>Top-level configuration:
+<div class="highlight"><pre><span></span><code><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Research Environment&quot;</span><span class="p">,</span>
+</code></pre></div>
+This simply names your development container for easy identification.</p>
+</li>
+<li>
+<p>Build configuration:
+<div class="highlight"><pre><span></span><code><span class="nt">&quot;build&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;dockerfile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;../Dockerfile&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;context&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;..&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+This tells VS Code how to build the container:</p>
+</li>
+<li><code>dockerfile</code>: Points to a Dockerfile one directory up from the devcontainer.json</li>
+<li>
+<p><code>context</code>: Sets the build context to the parent directory - what stuff to include in the build</p>
+</li>
+<li>
+<p>Features section:
+<div class="highlight"><pre><span></span><code><span class="nt">&quot;features&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;ghcr.io/devcontainers/features/git:1&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span>
+<span class="p">}</span>
+</code></pre></div>
+This adds additional tools to your container. Here, it's installing Git from the GitHub Container Registry.</p>
+</li>
+<li>
+<p>VS Code Customizations:
+<div class="highlight"><pre><span></span><code><span class="nt">&quot;customizations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;vscode&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;extensions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="p">],</span>
+<span class="w">        </span><span class="nt">&quot;settings&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+This configures VS Code-specific settings:</p>
+</li>
+<li>Extensions installed automatically:</li>
+<li>Python extension</li>
+<li>Pylance (Python language server)</li>
+<li>Black formatter</li>
+<li>Jupyter notebook support</li>
+<li>GitHub Copilot</li>
+<li>VS Code settings configured:</li>
+<li>Sets Python interpreter path</li>
+<li>Enables linting</li>
+<li>Uses Black for formatting</li>
+<li>Enables format-on-save</li>
+<li>Sets a line length ruler at 88 characters (Black's default)</li>
+</ol>
+<p>We can add other dev tools here like mypy or itools or flake8.</p>
+<ol>
+<li>
+<p>Port Forwarding:
+<div class="highlight"><pre><span></span><code><span class="nt">&quot;forwardPorts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">8888</span><span class="p">]</span>
+</code></pre></div>
+Makes port 8888 (commonly used for Jupyter notebooks) available on your local machine.</p>
+</li>
+<li>
+<p>Post-Creation Commands:
+<div class="highlight"><pre><span></span><code><span class="nt">&quot;postCreateCommand&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pip install -r requirements.txt&quot;</span>
+</code></pre></div>
+Runs after the container is created - in this case, installing Python dependencies from requirements.txt.</p>
+</li>
+<li>
+<p>Environment Variables:
+<div class="highlight"><pre><span></span><code><span class="nt">&quot;remoteEnv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;PYTHONPATH&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${containerWorkspaceFolder}&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+Sets environment variables in the container:</p>
+</li>
+<li>Adds the workspace folder to Python's module search path, letting you import from any subdirectory</li>
+</ol>
+<p>This configuration creates a fully-featured Python development environment with:
+- Code formatting and linting
+- Jupyter notebook support
+- Git integration
+- Automatic dependency installation
+- Proper Python path configuration
+- AI assistance through Copilot</p>
+<p>We are also free to add other features such as poetry.</p>
 
 
 
