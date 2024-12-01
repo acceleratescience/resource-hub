@@ -40,7 +40,7 @@ jobs:
           GH_TOKEN: ${{ steps.generate_token.outputs.token }}
         run: |
           # List of repositories to trigger
-          repos=("large-language-models" "hands-on-llms" "packaging-publishing" "ai-core-concepts" "diffusion-models")
+          repos=("large-language-models" "hands-on-llms" "packaging-publishing" "ai-core-concepts" "diffusion-models" "docker-for-science")
           
           for repo in "${repos[@]}"; do
             curl -X POST \
