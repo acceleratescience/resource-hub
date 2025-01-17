@@ -9,6 +9,7 @@ nav:
 theme:
   favicon: imgs/trace.svg
   name: material
+  custom_dir: overrides
   logo: imgs/trace.svg
   # custom_dir: overrides
   features:
