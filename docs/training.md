@@ -70,7 +70,7 @@ Accelerate's 1-day workshops are created by the Accelerate Programme's Machine L
     Explore diffusion models with Stable Diffusion. An overview of VAEs, UNet, CLIP.
 
 
--   [__Introduction to Generative AI__](https://github.com/acceleratescience/GenAI)<br>`INTERMEDIATE`
+-   [__Introduction to Generative AI__](https://github.com/acceleratescience/GenAI)<br>`BEGINNER`
 
     ---
     This course is introduction to deep Generative AI and its applications.
