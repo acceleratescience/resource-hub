@@ -56,6 +56,15 @@ These online courses are run jointly between the Accelerate programme and Cambri
 ## Accelerate Workshops
 Accelerate's 1-day workshops are created by the Accelerate Programme's Machine Learning Engineers and researchers. You can sign up to attend the workshops when we run them, or work through the online material at your own pace. 
 
+<div class="grid cards newcomer" markdown>
+
+-   [__Introduction to Generative AI__](https://github.com/acceleratescience/GenAI)<br>`NEWCOMER`
+
+    ---
+    This course is an introduction to deep Generative AI and its applications.
+
+</div>
+
 <div class="grid cards intermediate" markdown>
 
 -   [__AI and Large Language Models__](https://docs.science.ai.cam.ac.uk/large-language-models/)<br>`INTERMEDIATE`
@@ -97,10 +106,10 @@ Accelerate's 1-day workshops are created by the Accelerate Programme's Machine L
 
 <div class="grid cards proficient" markdown>
 
--   [__Large Language Models Hands On__](https://docs.science.ai.cam.ac.uk/hands-on-llms/) `PROFICIENT`
+-   [__Large Language Models Hands On__](https://docs.science.ai.cam.ac.uk/hands-on-llms/) <br>`PROFICIENT`
 
     ---
-    Gets hands on experience using LLMs - OpenAI, Pydantic, Jinja, databases, and more...
+    Get hands on experience using LLMs - OpenAI, Pydantic, Jinja, databases, and more...
 
 </div>
 
