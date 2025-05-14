@@ -1,0 +1,14 @@
+<script lang="ts">
+    const workshopTitle = "Effective CI/CD Pipelines"; // Example title
+  </script>
+  
+  <div class="workshop-content">
+    <h1>{workshopTitle}</h1>
+    <p>Learn how to set up continuous integration and deployment pipelines for your projects. Content for this workshop is under development.</p>
+  </div>
+  
+  <style> /* Consistent with Workshop 1 styles */
+    .workshop-content { padding: 1rem 0; }
+    h1 { color: #ffffff; margin-bottom: 1.5rem; font-size: 2.2rem; }
+    p { line-height: 1.7; font-size: 1.1rem; color: #c0d0e0; margin-bottom: 1rem; }
+  </style>
