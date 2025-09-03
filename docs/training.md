@@ -11,7 +11,7 @@ To help find the training that you need, we’ve grouped by level:
 We welcome recommendations from our community, so do let us know if you come across other tutorials and courses that we ought to include here.
 
 
-[CONTACT US :fontawesome-solid-paper-plane:](mailto:accelerate-mle@cst.cam.ac.uk){ .md-button }
+[:fontawesome-solid-paper-plane: &nbsp;&nbsp;&nbsp; CONTACT US](mailto:accelerate-mle@cst.cam.ac.uk){ .md-button }
 
 ## Intro to AI
 We have put together a short online course as an introduction to some of the core AI concepts.
@@ -25,36 +25,10 @@ We have put together a short online course as an introduction to some of the cor
 
 </div>
 
-
-## Courses: Accelerate Science & Cambridge Spark
-These online courses are run jointly between the Accelerate programme and Cambridge Spark, and are available for university researchers to sign up to.
-
-<div class="grid cards newcomer" markdown>
-
--   [__Python Programming for Science__](https://acceleratescience.github.io/resources/python-programming-for-science.html)<br>`NEWCOMER`
-
-    ---
-    1-3 day self-learning module introduces the fundamentals of Python, some of the kinds of data it can handle, and how to store that data. Designed for researchers across disciplines, it supports learners to rapidly learn how to code in the context of working with real-world data.
-
-
--   [__Data Residency__](https://acceleratescience.github.io/resources/introducing-data-science-for-science.html)<br>`NEWCOMER`
-
-    ---
-    The Accelerate Programme offers PhDs and postdocs in disciplines across Cambridge University the opportunity to participate in a 5-week ‘Data for Science’ training course. This structured Accelerate-Cambridge Spark ‘Introducing Data Science for Research’ will equip scientists with modern practical data analysis skills using Python in a virtual instructor-led accelerated masterclass.
-
-
--   [__ML Academy__]()<br>`NEWCOMER`
-
-    ---
-    This 12 month introduction to Machine Learning is a structured Accelerate-Cambridge Spark course. With the fundamentals of AI and ML, and a selection of modules to choose from, the course is designed to give you the knowledge to confidently begin using ML in your work. Contact us to register your interest.
-
-
-</div>
-
-
-
 ## Accelerate Workshops
-Accelerate's 1-day workshops are created by the Accelerate Programme's Machine Learning Engineers and researchers. You can sign up to attend the workshops when we run them, or work through the online material at your own pace. 
+Accelerate's 1-day workshops are created by the Accelerate Programme's Machine Learning Engineers and researchers. You can sign up to attend the workshops when we run them, or work through the online material at your own pace. To book a workshop, keep an eye on our UTBS booking page.
+    
+[:fontawesome-solid-chalkboard-user: &nbsp;&nbsp;&nbsp; Book a workshop](https://www.training.cam.ac.uk/apsci/search){ .md-button }
 
 <div class="grid cards newcomer" markdown>
 
@@ -110,6 +84,32 @@ Accelerate's 1-day workshops are created by the Accelerate Programme's Machine L
 
     ---
     Get hands on experience using LLMs - OpenAI, Pydantic, Jinja, databases, and more...
+
+</div>
+
+
+## Courses: Accelerate Science & Cambridge Spark
+These online courses are run jointly between the Accelerate programme and Cambridge Spark, and are available for university researchers to sign up to.
+
+<div class="grid cards newcomer" markdown>
+
+-   [__Python Programming for Science__](https://acceleratescience.github.io/resources/python-programming-for-science.html)<br>`NEWCOMER`
+
+    ---
+    1-3 day self-learning module introduces the fundamentals of Python, some of the kinds of data it can handle, and how to store that data. Designed for researchers across disciplines, it supports learners to rapidly learn how to code in the context of working with real-world data.
+
+
+-   [__Data Residency__](https://acceleratescience.github.io/resources/introducing-data-science-for-science.html)<br>`NEWCOMER`
+
+    ---
+    The Accelerate Programme offers PhDs and postdocs in disciplines across Cambridge University the opportunity to participate in a 5-week ‘Data for Science’ training course. This structured Accelerate-Cambridge Spark ‘Introducing Data Science for Research’ will equip scientists with modern practical data analysis skills using Python in a virtual instructor-led accelerated masterclass.
+
+
+-   [__ML Academy__]()<br>`NEWCOMER`
+
+    ---
+    This 12 month introduction to Machine Learning is a structured Accelerate-Cambridge Spark course. With the fundamentals of AI and ML, and a selection of modules to choose from, the course is designed to give you the knowledge to confidently begin using ML in your work. Contact us to register your interest.
+
 
 </div>
 

@@ -23,6 +23,13 @@ Artificial Intelligence has become an indispensable tool for researchers across 
 </div>
 
 <div class="grid">
+  <a href="/clinic/" class="card" style="color: inherit; border-left: 2px solid var(--md-accent-fg-color); padding-left: 1rem;">
+    <span class="card-heading" style="font-size: 1.5rem; display: block; color: var(--md-accent-fg-color); border-bottom: 1px solid var(--md-default-fg-color--lighter); padding-bottom: 0.5rem; margin-bottom: 1rem;">Clinic</span>
+    <span class="card-body">Need some help or advice? Get in touch, and book an appointment to chat with one of our Machine Learning Engineers.</span>
+  </a>
+</div>
+
+<div class="grid">
   <a href="/software/" class="card" style="color: inherit; border-left: 2px solid var(--md-accent-fg-color); padding-left: 1rem;">
     <span class="card-heading" style="font-size: 1.5rem; display: block; color: var(--md-accent-fg-color); border-bottom: 1px solid var(--md-default-fg-color--lighter); padding-bottom: 0.5rem; margin-bottom: 1rem;">Software</span>
     <span class="card-body">Accelerate Science offers expert advice to Cambridge University researchers using AI in their research, providing code and helping to resolve engineering issues. Find out what support you can access. </span>
@@ -39,4 +46,4 @@ Artificial Intelligence has become an indispensable tool for researchers across 
 
 If you can't find what you need, then get in touch. 
 
-[CONTACT US :fontawesome-solid-paper-plane:](mailto:accelerate-mle@cst.cam.ac.uk){ .md-button }
+[:fontawesome-solid-paper-plane: &nbsp;&nbsp;&nbsp; CONTACT US](mailto:accelerate-mle@cst.cam.ac.uk){ .md-button }

@@ -2,8 +2,11 @@ site_name: Accelerate Science Resource Hub
 repo_url: https://github.com/acceleratescience/resource-hub/
 site_url: https://docs.science.ai.cam.ac.uk
 nav:
-  - Home: index.md
+  - Home: 
+    - index.md
+    - Our MLEs: about.md
   - Training: training.md
+  - Clinic: clinic.md
   - Software: software.md
   - Community: community.md
 theme:
@@ -69,6 +72,9 @@ plugins:
   - search
 extra_css:
   - stylesheets/extra.css
+  - stylesheets/consent.css
+extra_javascript:
+  - javascripts/custom-consent.js
 markdown_extensions:
   - abbr
   - admonition
@@ -94,16 +100,6 @@ markdown_extensions:
 
 
 extra:
-  consent:
-      title: Cookie consent
-      description: >- 
-        We use cookies to recognize your repeated visits and preferences, as well
-        as to measure the effectiveness of our documentation and whether users
-        find what they're searching for. With your consent, you're helping us to
-        make our documentation better.
-      actions:
-        - manage
-        - accept
   analytics:
     provider: google
     property: G-JLGLYJ24SD
