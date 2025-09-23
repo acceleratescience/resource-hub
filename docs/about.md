@@ -6,7 +6,7 @@ When you interact with the Accelerate Programme in a technical capacity, it's he
 
 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px;">
   <div style="display: flex; align-items: center;">
-    <img src="/imgs/team/light.jpg" alt="Finley Griffin" style="width:180px; height:180px; object-fit:cover; border-radius:50%; border: 3px solid #eee; cursor:pointer;" onclick="showModal('Finley Griffin', 'ML Engineer', 'Finley has not started yet. Cat-liking status is unknown.')">
+    <img src="/imgs/team/fin.png" alt="Finley Griffin" style="width:180px; height:180px; object-fit:cover; border-radius:50%; border: 3px solid #eee; cursor:pointer;" onclick="showModal('Finley Griffin', 'ML Engineer', 'Finley has not started yet. Cat-liking status is unknown.')">
     <div style="margin-left: 20px;">
       <div style="font-weight: bold;">Finley Griffin</div>
       <div>ML Engineer</div>
