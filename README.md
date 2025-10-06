@@ -156,7 +156,7 @@ graph TD
     click Comm href "https://docs.science.ai.cam.ac.uk/community/" _blank
     click Z href "https://docs.science.ai.cam.ac.uk/ai-core-concepts/" _blank
     click B href "https://docs.science.ai.cam.ac.uk/large-language-models/" _blank
-    click C href "https://docs.science.ai.cam.ac.uk/large-language-models/" _blank
+    click C href "https://docs.science.ai.cam.ac.uk/hands-on-llms/" _blank
     click D href "https://docs.science.ai.cam.ac.uk/diffusion-models/" _blank
     click E href "https://docs.science.ai.cam.ac.uk/packaging-publishing/" _blank
     click F href "https://docs.science.ai.cam.ac.uk/docker-for-science/" _blank
