@@ -211,7 +211,7 @@ We are trialing setting up runpod instances for each person at our clinic.
 -   [__Click Here to Login to Pods__](https://pods.acceleratescience.co.uk/)<br>`NEWCOMER`
 
     ---
-    This platform was built with aws, runpod, github, jupyter, and coder. Ask a member of the MLE team for your username and password. Yes, the link is a placeholder for now.
+    We will be trialling this platform during some of our sessions. Ask a member of the MLE team for your username and password.
 
 
 </div>
