@@ -208,7 +208,7 @@ We are trialing setting up runpod instances for each person at our clinic.
 
 <div class="grid cards newcomer" markdown>
 
--   [__Click Here to Login to Pods__](http://127.0.0.1:8000/login/)<br>`NEWCOMER`
+-   [__Click Here to Login to Pods__](https://pods.acceleratescience.co.uk/)<br>`NEWCOMER`
 
     ---
     This platform was built with aws, runpod, github, jupyter, and coder. Ask a member of the MLE team for your username and password. Yes, the link is a placeholder for now.
