@@ -5,7 +5,7 @@ We’ve collected together some of the training courses and tutorials from the U
 To help find the training that you need, we’ve grouped by level:
 
 - **NEWCOMER** You’re interested to learn about AI technology, but don't yet have a clear idea of how to use it. You are new to programming.
-- **INTERMEDIATE** You have some AI knowledge, have some clear ideas about how to use AI in your research, and consider yourself a a beginner- to mid-level programmer.
+- **INTERMEDIATE** You have some AI knowledge, have some clear ideas about how to use AI in your research, and consider yourself a beginner- to mid-level programmer.
 - **PROFICIENT** You've successfully used AI in your research, are a competent programmer, and are looking to make research software and processes more scalable and efficient.
 
 We welcome recommendations from our community, so do let us know if you come across other tutorials and courses that we ought to include here.
