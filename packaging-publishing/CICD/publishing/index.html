@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../imgs/trace.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
     
     
       
@@ -1758,7 +1758,7 @@ This will update your <code>dev</code> branch with the changes from <code>master
 git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>master
 </code></pre></div>
 <p>Bump the version (because if we try to push this version again, it will fail), and push the changes:</p>
-<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>version<span class="w"> </span>patch
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>version<span class="w"> </span>--bump<span class="w"> </span>patch
 git<span class="w"> </span>add<span class="w"> </span>pyproject.toml
 git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Bump version to </span><span class="k">$(</span>uv<span class="w"> </span>version<span class="w"> </span>--short<span class="k">)</span><span class="s2">&quot;</span>
 git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>master

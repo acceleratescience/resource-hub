@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../imgs/trace.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
     
     
       
@@ -1544,6 +1544,8 @@ and this should return something like:
 </code></pre></div>
 We have to do this, because if you try to install a package from Test PyPI which has dependencies that are NOT hosted on Test PyPI, the installation will fail.</p>
 <p>Now install your new package using <code>pip</code>- copy the command from the Test PyPI page for your project, and try out the <code>cancer-prediction test</code> command.</p>
+<div class="highlight"><pre><span></span><code>cancer-prediction<span class="w"> </span><span class="nb">test</span><span class="w"> </span>-t<span class="w"> </span><span class="s1">&#39;data/breast_cancer_train.csv&#39;</span><span class="w"> </span>-m<span class="w"> </span><span class="s1">&#39;models/cancer_model.pkl&#39;</span>
+</code></pre></div>
 <p>It really is that simple.</p>
 <p><br>
 <img alt="Dark Souls Bonfire" class="center" src="../../imgs/dark-souls-bonfire.gif" title="Commit your changes and rest, weary traveller" width="50" />

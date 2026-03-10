@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../imgs/trace.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
     
     
       
@@ -1674,20 +1674,17 @@ max-line-length = 88
 </code></pre></div></p>
 <h2 id="trying-it-out">Trying it out</h2>
 <p>In the command line, we can run
-<div class="highlight"><pre><span></span><code>pre-commit run --all-files
-```;
-
-and we should get the following (This may take a minute or two to run for the first time):
-</code></pre></div>
-black....................................................................Passed
+<div class="highlight"><pre><span></span><code>pre-commit<span class="w"> </span>run<span class="w"> </span>--all-files
+</code></pre></div></p>
+<p>and we should get the following (This may take a minute or two to run for the first time):
+<div class="highlight"><pre><span></span><code>black....................................................................Passed
 flake8...................................................................Passed
 mypy.....................................................................Passed
 isort....................................................................Passed
-<div class="highlight"><pre><span></span><code>If there are any issues, work through them to fix the issues. Similarly when you use the VSCode UI to make a commit, any issues will be picked up.
-
-Now in the `cancer_model.py` file, add the following import statement
-```python
-import matplotlib.pyplot as plt
+</code></pre></div></p>
+<p>If there are any issues, work through them to fix the issues. Similarly when you use the VSCode UI to make a commit, any issues will be picked up.</p>
+<p>Now in the <code>cancer_model.py</code> file, add the following import statement
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 </code></pre></div></p>
 <p>You should get the following output when you run the pre-commit
 <div class="highlight"><pre><span></span><code>black....................................................................Passed
