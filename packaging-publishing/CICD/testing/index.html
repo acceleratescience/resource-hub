@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../imgs/trace.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
     
     
       
@@ -1585,7 +1585,7 @@
 <span class="nt">on</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">push</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">branches-ignore</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">master</span>
 
 <span class="nt">jobs</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">pre-commit</span><span class="p">:</span>
@@ -1633,9 +1633,9 @@
 <span class="nt">on</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">push</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">branches-ignore</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">master</span>
 </code></pre></div></td></tr></table></div>
-<p>We give the workflow a name <code>Run Tests</code>. Then we say, whenever a push is made to any branch other than <code>main</code>, run this workflow.</p>
+<p>We give the workflow a name <code>Run Tests</code>. Then we say, whenever a push is made to any branch other than <code>master</code>, run this workflow.</p>
 <h3 id="the-jobs">The jobs</h3>
 <p>Next, we define what <code>jobs</code> we want to run. In this case we have two: the <code>pre-commit</code>, and the <code>tests</code>.</p>
 <h4 id="the-pre-commit-checks">The pre-commit checks</h4>

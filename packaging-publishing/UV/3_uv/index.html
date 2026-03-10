@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../imgs/trace.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
     
     
       
@@ -1484,13 +1484,19 @@ This creates only a minimal pyproject.toml in the current directory (no extra fi
 <p>And for development dependencies, let's add <code>black</code>, <code>isort</code> and <code>flake8</code>.
 <div class="highlight"><pre><span></span><code>uv<span class="w"> </span>add<span class="w"> </span>--dev<span class="w"> </span>black<span class="w"> </span>isort<span class="w"> </span>flake8
 </code></pre></div>
-If you navigate to the <code>pyproject.toml</code>, you can also add a description and author of the project below the <code>version=...</code> line.
+If you navigate to the <code>pyproject.toml</code>, you should be able to change the name of the project.
+<div class="highlight"><pre><span></span><code>name = &quot;cancer-prediction-&lt;your-CRSId&gt;&quot;
+</code></pre></div>
+You can also add a description and author of the project below the <code>version=...</code> line.
 <div class="highlight"><pre><span></span><code>description = &quot;A basic model to predict cancerous tumors based on certain properties.&quot;
 authors = [{name = &quot;Harry Potter&quot;}]
+</code></pre></div>
+Let's also update our Python version while we're here (<code>uv</code> uses 3.8 by default):
+<div class="highlight"><pre><span></span><code>requires-python = &quot;&gt;=3.11&quot;
 </code></pre></div></p>
 <h2 id="file-structure">File structure <a id="poetry-files"></a></h2>
 <p>Let's create the file directories according to the structure below. Don't worry if the order of the files and folders isn't the same.
-<div class="highlight"><pre><span></span><code>cancer-prediction-crsid
+<div class="highlight"><pre><span></span><code>workshop
 ├── .venv
 ├── models
 │   └── cancer_model.pkl
@@ -1498,7 +1504,7 @@ authors = [{name = &quot;Harry Potter&quot;}]
 │   ├── breast_cancer_test.csv
 │   ├── breast_cancer_train.csv
 │   └── breast_cancer.csv
-├── src/cancer_prediction
+├── src/cancer_prediction_&lt;your-CRSId&gt;
 │   ├── __init__.py
 │   ├── app.py
 │   ├── cancer_model.py
@@ -1536,13 +1542,14 @@ authors = [{name = &quot;Harry Potter&quot;}]
 <p>If we want to add another package to our project, such as <code>streamlit</code>, we can just say,
 <div class="highlight"><pre><span></span><code>uv add streamlit
 </code></pre></div></p>
-<p>Notice that now <code>streamlit</code> has appeared in <code>pyproject.toml</code>! <code>uv</code> has also created it's own environment in a folder called <code>.venv</code>. Right now, our shell is still pointing to our pip-managed virtual environment.</p>
-<p>To fix this we just need to remove the old virtual environment and let uv manage <code>.venv</code>:
+<p>Notice that now <code>streamlit</code> has appeared in <code>pyproject.toml</code>! Right now, our shell is still pointing to our pip-managed virtual environment.</p>
+<p>To fix this we just need to remove the old virtual environment. We are also going to remove then re-build <code>.venv</code> (which uv created when we did <code>uv init</code>) and let uv manage it:
 <div class="highlight"><pre><span></span><code>rm<span class="w"> </span>-rf<span class="w"> </span>venv
-<span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+rm<span class="w"> </span>-rf<span class="w"> </span>.venv
 uv<span class="w"> </span>sync
+<span class="nb">source</span><span class="w"> </span>.venv/bin/activate
 </code></pre></div></p>
-<p>You should now see <code>(cancer-prediction-&lt;your-crsid&gt;)</code> at the start of the terminal. That means the shell is correclty pointing at our <code>uv</code>-managed virtual environment!</p>
+<p>You should now see <code>(cancer-prediction-&lt;your-CRSId&gt;)</code> at the start of the terminal. That means the shell is correclty pointing at our updated <code>uv</code>-managed virtual environment!</p>
 <p><br>
 <img alt="Dark Souls Bonfire" class="center" src="../../imgs/dark-souls-bonfire.gif" title="Commit your changes and rest, weary traveller" width="50" />
 <br></p>

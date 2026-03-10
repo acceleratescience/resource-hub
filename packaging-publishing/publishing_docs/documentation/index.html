@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../imgs/trace.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
     
     
       
@@ -1641,7 +1641,7 @@ This is an example of reST style.
 <p>There are a few other functions and methods without type hints or docstrings, so feel free to complete them.</p>
 <h2 id="setting-up-mkdocs">Setting up MkDocs</h2>
 <p>Perhaps surprisingly, MkDocs can automatically parse your docstring information and produce documentation! We must first install mkdocs and mkdocstrings to the dev group (because users won't need these packages to run the code):
-<div class="highlight"><pre><span></span><code>poetry add --group dev mkdocs mkdocstrings mkdocstrings[python]
+<div class="highlight"><pre><span></span><code>uv add --dev mkdocs mkdocstrings mkdocstrings[python]
 </code></pre></div></p>
 <p>We now run
 <div class="highlight"><pre><span></span><code>python -m mkdocs new .
@@ -1650,20 +1650,20 @@ This is an example of reST style.
 <div class="highlight"><pre><span></span><code>## Documentation
 Welcome to the documentation for the cancer prediction project. Here you will find information on the cancer model and the streamlit app.
 </code></pre></div>
-<p>Now we want to mimic the structure of our source file directory, so we create a new folder within <code>docs</code> called <code>cancer-prediction</code>, and within, we create two files: <code>cancer_model.md</code> and <code>streamlit_app.md</code>. So your documentation directory should be something like:</p>
+<p>Now we want to mimic the structure of our source file directory, so we create a new folder within <code>docs</code> called <code>cancer-prediction-&lt;your-CRSid&gt;</code>, and within, we create two files: <code>cancer_model.md</code> and <code>streamlit_app.md</code>. So your documentation directory should be something like:</p>
 <div class="highlight"><pre><span></span><code>.
 ├─ docs/
-│  ├─ cancer-prediction
+│  ├─ cancer-prediction-CRSId
 │  │  ├─ cancer_model.md
 │  │  └─ streamlit_app.md
 │  └─ index.md
 └─ mkdocs.yml
 </code></pre></div>
 <p>Within these two new files, we add:
-<div class="highlight"><pre><span></span><code>::: cancer_prediction.cancer_model
+<div class="highlight"><pre><span></span><code>::: cancer_prediction_&lt;your-CRSId&gt;.cancer_model
 </code></pre></div></p>
 <p>and
-<div class="highlight"><pre><span></span><code>::: cancer_prediction.streamlit_app
+<div class="highlight"><pre><span></span><code>::: cancer_prediction_&lt;your-CRSId&gt;.streamlit_app
 </code></pre></div></p>
 <p>This tells MkDocs where to look for the docstring information. The final thing left is to complete the <code>mkdocs.yml</code> file. These can get quite complicated (just have a quick look at the <code>yml</code> for this branch of the repo), and full customization options is <strong>well</strong> beyond the scope of this course. We will keep it simple:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Cancer Prediction</span>
@@ -1672,8 +1672,8 @@ Welcome to the documentation for the cancer prediction project. Here you will fi
 <span class="nt">nav</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Home</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.md</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cancer-prediction</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cancer model</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cancer-prediction/cancer_model.md</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">streamlit app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cancer-prediction/streamlit_app.md</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cancer model</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cancer-prediction-CRSid/cancer_model.md</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">streamlit app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cancer-prediction-CRSid/streamlit_app.md</span>
 <span class="nt">theme</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">readthedocs</span>
 <span class="nt">plugins</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mkdocstrings</span>

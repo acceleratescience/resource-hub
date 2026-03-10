@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../imgs/trace.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
     
     
       
@@ -99,7 +99,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#setting-up-codespaces" class="md-skip">
+        <a href="#setting-up-pods" class="md-skip">
           Skip to content
         </a>
       
@@ -694,10 +694,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#setting-up-codespaces" class="md-nav__link">
+  <a href="#setting-up-pods" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Setting up Codespaces
+        Setting up Pods
       
     </span>
   </a>
@@ -720,6 +720,17 @@
     <span class="md-ellipsis">
       
         Further reading
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-codespaces-legacy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting up Codespaces (Legacy)
       
     </span>
   </a>
@@ -1383,10 +1394,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#setting-up-codespaces" class="md-nav__link">
+  <a href="#setting-up-pods" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Setting up Codespaces
+        Setting up Pods
       
     </span>
   </a>
@@ -1415,6 +1426,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#setting-up-codespaces-legacy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting up Codespaces (Legacy)
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1437,7 +1459,81 @@
 
   <h1>Setting up</h1>
 
-<h2 id="setting-up-codespaces">Setting up Codespaces</h2>
+<h2 id="setting-up-pods">Setting up Pods</h2>
+<p><code>Pods</code> is our teaching platform for hands-on programming. It standardises the training workshop by giving everyone an identical Docker container and operating system, so we avoid the classic “this doesn’t work on my machine” problem.
+That said, if you run into any issues, please feel free to raise your hand. The steps for setup will be outlined in the early stages of the workshop, but they are included below too:</p>
+<ol>
+<li>Head to <a href="https://pods.acceleratescience.co.uk">pods.acceleratescience.co.uk</a></li>
+<li>Username = [CRSid], password will be provided in the workshop</li>
+</ol>
+<p><img alt="" src="../imgs/pods.png" /></p>
+<ol>
+<li>You should see a screen like above. Click VSCode/JupyterLab to open the IDE in your browser!</li>
+</ol>
+<h2 id="create-a-new-branch">Create a new branch</h2>
+<p>We are going to start by initialising a git repository in our directory
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>init
+</code></pre></div>
+We also need to create and set an <code>origin</code> for our git repository, that is a repository hosted on GitHub that we can push our changes to. The first step is to head to GitHub and create a new repository with the name:
+<div class="highlight"><pre><span></span><code>cancer-prediction-&lt;your-CRSId&gt;
+</code></pre></div>
+If we now return to our IDE and ask for the remote repository
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>remote<span class="w"> </span>-v
+</code></pre></div>
+nothing is returned. To set this to our newly created GitHub repository, simply run:
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>https://github.com/username/repository-name.git
+</code></pre></div>
+Now, <code>git remote -v</code> should return:
+<div class="highlight"><pre><span></span><code>origin<span class="w">  </span>https://github.com/username/cancer-prediction-CRSId.git<span class="w"> </span><span class="o">(</span>fetch<span class="o">)</span>
+origin<span class="w">  </span>https://github.com/username/cancer-prediction-CRSId.git<span class="w"> </span><span class="o">(</span>push<span class="o">)</span>
+</code></pre></div>
+It is good practice to do development work on a new branch, but first we should set up a virtual environment and install any dependencies.</p>
+<p>Set up the new virtual environment with,
+<div class="highlight"><pre><span></span><code>python3.11<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+.<span class="w"> </span>venv/bin/activate
+</code></pre></div></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are running this locally, you may not have python3.11. Just use whatever you have.</p>
+</div>
+<p>You can verify the path of the python version you are using by running
+<div class="highlight"><pre><span></span><code>which<span class="w"> </span>python
+</code></pre></div>
+and this should return something like:\
+ <code>/workspaces/cancer-prediction/venv/bin/python</code></p>
+<p>We install the dependencies using
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</code></pre></div></p>
+<p>Notice that in the version control tab, we have over 1,000 unstaged changes!! If we have a look at these, they are mostly files from the virtual environment. We do NOT want to push these to our repo. So we create the three core files we need: a <code>.gitignore</code>, a <code>LICENSE</code>, and a <code>README.md</code>, either using the UI or by typing in the terminal:</p>
+<div class="highlight"><pre><span></span><code>touch<span class="w"> </span>.gitignore<span class="w"> </span>LICENSE<span class="w"> </span>README.md
+</code></pre></div>
+<p>and populate it with boiler plate text. If you have Copilot, it will do it for you, or you can copy the one <a href="https://gist.github.com/rkdan/d082859a7479ba766f7dd32f3925c9ea">here</a>.</p>
+<p>Once you update, all the additional files should vanish from the staging area. Once this is done, commit the changes, and sync the remote version with the local version.</p>
+<p>When you see this symbol:</p>
+<p><br>
+<img alt="Dark Souls Bonfire" class="center" src="../imgs/dark-souls-bonfire.gif" title="Commit your changes and rest, weary traveller" width="50" />
+<br></p>
+<p>it means that you should commit and push your changes to the repository. They indicate key checkpoints in the workshop.</p>
+<p>In the source control tab, hit "Publish Branch".</p>
+<p>Now create a new branch using the UI or using the git CLI.
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>dev
+</code></pre></div></p>
+<p>This will automatically create and move over to a new branch called <code>dev</code>. The environment and all the packages we installed should also be moved along with it. We will use this for developing new features in the codebase. Publish this branch using the same method as before.</p>
+<h2 id="further-reading">Further reading</h2>
+<div class="grid cards">
+<ul>
+<li>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M256 141.3v309.3l.5-.2A449 449 0 0 1 428.8 416H448V96h-19.2c-42.2 0-84.1 8.4-123.1 24.6-16.8 7-33.4 13.9-49.7 20.7m-25.1-79.8L256 72l25.1-10.5C327.9 42 378.1 32 428.8 32H464c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48h-35.2c-50.7 0-100.9 10-147.7 29.5l-12.8 5.3c-7.9 3.3-16.7 3.3-24.6 0l-12.8-5.3C184.1 490 133.9 480 83.2 480H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h35.2c50.7 0 100.9 10 147.7 29.5"/></svg></span> <a href="../resources/references/#setting-up"><strong>Set up resources</strong></a></p>
+<hr />
+<p>Information on Git/GitHub, Codespaces, VSCode</p>
+</li>
+</ul>
+</div>
+<h2 id="setting-up-codespaces-legacy">Setting up Codespaces (<em>Legacy</em>)</h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>We no longer use CodeSpaces in our workshops, and instead make use of our shiny new platform <code>Pods</code>. This is included here purely as a fallback option.</p>
+</div>
 <p>The first step is to fork this repository to your own GitHub account. This will allow you to make changes to the code without affecting the original repository.</p>
 <p>Now head back over to your newly created repo. Everything in the <code>main</code> repo is not needed, so we do a few things:</p>
 <p><strong>Change the default branch</strong></p>
@@ -1471,49 +1567,6 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Even though we are using Codespaces, the general packaging process will still work with regular VSCode on your desktop.</p>
-</div>
-<h2 id="create-a-new-branch">Create a new branch</h2>
-<p>It is good practice to do development work on a new branch, but first we should set up a virtual environment and install any dependencies.</p>
-<p>Set up the new virtual environment with,
-<div class="highlight"><pre><span></span><code>python3.11<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
-.<span class="w"> </span>venv/bin/activate
-</code></pre></div></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you are running this locally, you may not have python3.11. Just use whatever you have.</p>
-</div>
-<p>You can verify the path of the python version you are using by running
-<div class="highlight"><pre><span></span><code>which<span class="w"> </span>python
-</code></pre></div>
-and this should return something like:\
- <code>/workspaces/cancer-prediction/venv/bin/python</code></p>
-<p>We install the dependencies using
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
-</code></pre></div></p>
-<p>Notice that in the version control tab, we have over 1,000 unstaged changes!! If we have a look at these, they are mostly files from the virtual environment. We do NOT want to push these to our repo. So we create the three core files we need: a <code>.gitignore</code>, a <code>LICENSE</code>, and a <code>README.md</code>, either using the UI or by typing in the terminal:</p>
-<div class="highlight"><pre><span></span><code>touch<span class="w"> </span>.gitignore<span class="w"> </span>LICENSE<span class="w"> </span>README.md
-</code></pre></div>
-<p>and populate it with boiler plate text. If you have Copilot, it will do it for you, or you can copy the one <a href="https://gist.github.com/rkdan/d082859a7479ba766f7dd32f3925c9ea">here</a>.</p>
-<p>Once you update, all the additional files should vanish from the staging area. Once this is done, commit the changes, and sync the remote version with the local version.</p>
-<p>Now create a new branch using the UI or using the git CLI.
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>dev
-</code></pre></div></p>
-<p>This will automatically create and move over to a new branch called <code>dev</code>. The environment and all the packages we installed should also be moved along with it.</p>
-<p>In the source control tab, hit "Publish Branch".</p>
-<p>When you see this symbol:</p>
-<p><br>
-<img alt="Dark Souls Bonfire" class="center" src="../imgs/dark-souls-bonfire.gif" title="Commit your changes and rest, weary traveller" width="50" />
-<br></p>
-<p>it means that you should commit and push your changes to the repository. They indicate key checkpoints in the workshop.</p>
-<h2 id="further-reading">Further reading</h2>
-<div class="grid cards">
-<ul>
-<li>
-<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M256 141.3v309.3l.5-.2A449 449 0 0 1 428.8 416H448V96h-19.2c-42.2 0-84.1 8.4-123.1 24.6-16.8 7-33.4 13.9-49.7 20.7m-25.1-79.8L256 72l25.1-10.5C327.9 42 378.1 32 428.8 32H464c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48h-35.2c-50.7 0-100.9 10-147.7 29.5l-12.8 5.3c-7.9 3.3-16.7 3.3-24.6 0l-12.8-5.3C184.1 490 133.9 480 83.2 480H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h35.2c50.7 0 100.9 10 147.7 29.5"/></svg></span> <a href="../resources/references/#setting-up"><strong>Set up resources</strong></a></p>
-<hr />
-<p>Information on Git/GitHub, Codespaces, VSCode</p>
-</li>
-</ul>
 </div>
 
 

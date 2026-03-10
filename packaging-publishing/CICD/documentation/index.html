@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../imgs/trace.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
     
     
       
@@ -1339,7 +1339,7 @@
 <span class="nt">jobs</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">build-docs</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">needs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tests</span>
-<span class="w">    </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.event_name == &#39;push&#39; &amp;&amp; github.ref == &#39;refs/heads/main&#39;</span>
+<span class="w">    </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.event_name == &#39;push&#39; &amp;&amp; github.ref == &#39;refs/heads/master&#39;</span>
 <span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
 
 <span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
@@ -1347,14 +1347,14 @@
 <span class="w">        </span><span class="nt">with</span><span class="p">:</span>
 <span class="w">          </span><span class="nt">fetch-depth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
 
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Verify tag is on main</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Verify tag is on master</span>
 <span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
 <span class="w">          </span><span class="no"># Get the branch containing this tag</span>
-<span class="w">          </span><span class="no">BRANCH=$(git branch -r --contains ${{ github.ref }} | grep &#39;main&#39; || true)</span>
+<span class="w">          </span><span class="no">BRANCH=$(git branch -r --contains ${{ github.ref }} | grep &#39;master&#39; || true)</span>
 
-<span class="w">          </span><span class="no"># Check if the tag is on main</span>
+<span class="w">          </span><span class="no"># Check if the tag is on master</span>
 <span class="w">          </span><span class="no">if [ -z &quot;$BRANCH&quot; ]; then</span>
-<span class="w">            </span><span class="no">echo &quot;Error: Tag must be created on main branch&quot;</span>
+<span class="w">            </span><span class="no">echo &quot;Error: Tag must be created on master branch&quot;</span>
 <span class="w">            </span><span class="no">exit 1</span>
 <span class="w">          </span><span class="no">fi</span>
 
@@ -1399,15 +1399,15 @@
 </code></pre></div></p>
 <p>which should display as the following:
 <img alt="" src="../../imgs/badges.png" /></p>
-<p>Before we push these changes, we will configure GitHub Pages so that our documentation will create a url for people to visit. Go to the repo Settings -&gt; Pages, and pick a branch to deploy from, in this case 'gh-pages'. So now when we push these changes and merge them to <code>main</code>, the documentation will be published and the badges will be displayed on the README!</p>
+<p>Before we push these changes, we will configure GitHub Pages so that our documentation will create a url for people to visit. Go to the repo Settings -&gt; Pages, and pick a branch to deploy from, in this case 'gh-pages'. So now when we push these changes and merge them to <code>master</code>, the documentation will be published and the badges will be displayed on the README!</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>You can in principle delete the 'dev' branch whenever you build your package. But if for whatever reason you decide to keep it, be sure to do the following
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>dev
 git<span class="w"> </span>fetch<span class="w"> </span>origin
-git<span class="w"> </span>merge<span class="w"> </span>origin/main
+git<span class="w"> </span>merge<span class="w"> </span>origin/master
 </code></pre></div></p>
-<p>This will ensure that the 'dev' branch is up to date with the 'main' branch. Do this BEFORE you make any changes to the 'dev' branch, otherwise you have to merge the changes manually.</p>
+<p>This will ensure that the 'dev' branch is up to date with the 'master' branch. Do this BEFORE you make any changes to the 'dev' branch, otherwise you have to merge the changes manually.</p>
 </div>
 
 

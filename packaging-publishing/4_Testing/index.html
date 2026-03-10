@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../imgs/trace.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
     
     
       
@@ -1552,6 +1552,10 @@
 </code></pre></div>
 </details>
 
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Remember to update your import to be from package <code>cancer_prediction_&lt;your-CRSId&gt;</code>, as opposed to the generic <code>cancer_prediction</code> we have here.</p>
+</div>
 <h2 id="running-tests">Running tests</h2>
 <h3 id="in-the-vscode-ui">In the VSCode UI</h3>
 <p>To run the tests, we click on the "Testing" tab on the sidebar, and then "Configure Python Tests". The order of clicks is as follows:</p>
@@ -1570,12 +1574,16 @@ Ran 2 tests in 0.000s
 OK
 </code></pre></div></p>
 <p>You can try changing part of the test code to force them to fail, and check the output. Now that the tests have run succesfully, it's time to commit and push the changes.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the tests fail due to an import error of your <code>cancer_prediction_&lt;your-CRSId&gt;.cancer_model</code> file, try running <code>uv sync</code> then re-running the test command.</p>
+</div>
 <p><br>
 <img alt="Dark Souls Bonfire" class="center" src="../imgs/dark-souls-bonfire.gif" title="Commit your changes and rest, weary traveller" width="50" />
 <br></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>For some reason Codespaces is not discovering the tests. Just run them in the terminal for now. But VSCode run locally should work fine.</p>
+<p>If for some reason the VSCode UI is not discovering the tests, try refreshing the VSCode window. If you're still having trouble, just run them in the terminal for now.</p>
 </div>
 <h2 id="further-reading">Further reading</h2>
 <div class="grid cards">

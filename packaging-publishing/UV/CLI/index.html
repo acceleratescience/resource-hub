@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../imgs/trace.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
     
     
       
@@ -1619,15 +1619,16 @@
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">cli</span><span class="p">()</span>
 </code></pre></div>
-<p>We create a new folder inside <code>cancer_prediction</code> called <code>scripts</code>.</p>
+<p>You will need to adjust the top import <code>from cancer_prediction.cancer_model import CancerModel</code> to use the correct package name with your CRSId.</p>
+<p>We now create a new folder inside <code>cancer_prediction_&lt;your-CRSid&gt;</code> called <code>scripts</code> and put <code>app.py</code> in there.</p>
 <p>We also need to add the <code>click</code> library. Since this is a main dependancy, we can add it using the regular <code>uv add</code> command.</p>
 <h2 id="additions-to-the-toml-file">Additions to the <code>.toml</code> file</h2>
 <p>The first thing we need to do is add an entry point to our <code>toml</code> file:
 <div class="highlight"><pre><span></span><code><span class="o">[</span>project.scripts<span class="o">]</span>
-<span class="nv">train</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;cancer_prediction.scripts.app:train&quot;</span>
+<span class="nv">train</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;cancer_prediction_&lt;your-CRSId&gt;.scripts.app:train&quot;</span>
 </code></pre></div></p>
 <p>We can check that it works, but running in the command line:
-<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>train<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;data/breast_cancer_train.csv&#39;</span><span class="w"> </span>-o<span class="w"> </span><span class="s1">&#39;models/cancer_model_2.pkl&#39;</span>
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>train<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;data/breast_cancer_train.csv&#39;</span><span class="w"> </span>-o<span class="w"> </span><span class="s1">&#39;models/cancer_model.pkl&#39;</span>
 </code></pre></div></p>
 <p>This likely won't work, because our environment is not really aware that we can do this, so let's try installing our package locally
 <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
@@ -1646,9 +1647,10 @@ Audited<span class="w"> </span><span class="m">81</span><span class="w"> </span>
 <div class="highlight"><pre><span></span><code>cancer-prediction train
 cancer-prediction test
 </code></pre></div></p>
-<p>We have defined our <code>train</code> command, but your bash terminal will not recognize the command <code>cancer-prediction</code>! To do this, we first need to make some other changes. We add the following lines to the bottom of <code>pyproject.toml</code>:
+<p>We have defined our <code>train</code> command, but your bash terminal will not recognize the command <code>cancer-prediction</code>! To do this, we first need to make some other changes. We can now update the bottom of <code>pyproject.toml</code>:
 <div class="highlight"><pre><span></span><code><span class="k">[project.scripts]</span>
-<span class="n">cancer-prediction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;cancer_prediction.scripts.app:cli&quot;</span>
+<span class="n">cancer-prediction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;cancer_prediction_CRSId.scripts.app:cli&quot;</span>
+<span class="n">train</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;cancer_prediction_CRSId.scripts.app:train&quot;</span>
 
 <span class="k">[build-system]</span>
 <span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;uv_build&gt;=0.9.5,&lt;0.10.0&quot;</span><span class="p">]</span>
@@ -1657,15 +1659,15 @@ cancer-prediction test
 <span class="k">[tool.uv]</span>
 <span class="n">package</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
 </code></pre></div></p>
-<p>This tells Python: "When I type the command <code>cancer-prediction</code> in my terminal, run the function <code>cli</code> from <code>cancer_prediction/scripts/app.py</code>"
+<p>This tells Python: "When I type the command <code>cancer-prediction</code> in my terminal, run the function <code>cli</code> from <code>cancer_prediction_*/scripts/app.py</code>"
 Next, install the project locally with
 <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
 </code></pre></div></p>
 <p>We can now try it out by running
-<div class="highlight"><pre><span></span><code>cancer-prediction<span class="w"> </span><span class="nb">test</span><span class="w"> </span>-t<span class="w"> </span><span class="s1">&#39;data/breast_cancer_train.csv&#39;</span><span class="w"> </span>-m<span class="w"> </span><span class="s1">&#39;models/cancer_model_2.pkl&#39;</span>
+<div class="highlight"><pre><span></span><code>cancer-prediction<span class="w"> </span><span class="nb">test</span><span class="w"> </span>-t<span class="w"> </span><span class="s1">&#39;data/breast_cancer_train.csv&#39;</span><span class="w"> </span>-m<span class="w"> </span><span class="s1">&#39;models/cancer_model.pkl&#39;</span>
 </code></pre></div></p>
 <p>and you should get some stuff printed to the terminal:
-<div class="highlight"><pre><span></span><code>Loading<span class="w"> </span>model<span class="w"> </span>from<span class="w"> </span>models/cancer_model_2.pkl...
+<div class="highlight"><pre><span></span><code>Loading<span class="w"> </span>model<span class="w"> </span>from<span class="w"> </span>models/cancer_model.pkl...
 Model<span class="w"> </span>loaded<span class="w"> </span>successfully
 
 Loading<span class="w"> </span><span class="nb">test</span><span class="w"> </span>data<span class="w"> </span>from<span class="w"> </span>data/breast_cancer_train.csv...
