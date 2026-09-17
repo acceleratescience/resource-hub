@@ -59,7 +59,7 @@ Accelerate's 1-day workshops are created by the Accelerate Programme's Machine L
     Equip yourself with knowledge of workflows and tools you can use to package and publish your python code.
 
 
--   [__Hands On Machine Learning__]()<br>`INTERMEDIATE`
+-   [__Hands On Machine Learning__](https://docs.science.ai.cam.ac.uk/machine-learning-hands-on/)<br>`INTERMEDIATE`
 
     ---
     Get some experience with using machine learning models on some real data.
