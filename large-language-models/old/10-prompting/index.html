@@ -8,31 +8,27 @@
       
       
       
-        <link rel="canonical" href="https://docs.science.ai.cam.ac.uk/large-language-models/10-prompting/">
+        <link rel="canonical" href="https://docs.science.ai.cam.ac.uk/large-language-models/old/10-prompting/">
       
       
-        <link rel="prev" href="../9-rag/">
-      
-      
-        <link rel="next" href="../11-practicalities/">
       
       
         
       
       
-      <link rel="icon" href="../imgs/trace.svg">
+      <link rel="icon" href="../../imgs/trace.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
-        <title>Prompting - Introduction to Large Language Models</title>
+        <title>Retrieval Augmented Generation - Introduction to Large Language Models</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -57,15 +53,15 @@
       
     
     
-      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
     
-      <link rel="stylesheet" href="../css/custom.css">
+      <link rel="stylesheet" href="../../css/custom.css">
     
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     
-      <link rel="stylesheet" href="../assets/css/custom.css">
+      <link rel="stylesheet" href="../../assets/css/custom.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -121,7 +117,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="https://docs.science.ai.cam.ac.uk/" title="Introduction to Large Language Models" class="md-header__button md-logo" aria-label="Introduction to Large Language Models" data-md-component="logo">
       
-  <img src="../imgs/trace.svg" alt="logo">
+  <img src="../../imgs/trace.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -138,7 +134,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Prompting
+              Retrieval Augmented Generation
             
           </span>
         </div>
@@ -262,7 +258,7 @@
     
     
       <li class="md-tabs__item">
-        <a href=".." class="md-tabs__link">
+        <a href="../.." class="md-tabs__link">
           
   
   
@@ -282,7 +278,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../1-introduction/" class="md-tabs__link">
+      <a href="../../1-introduction/" class="md-tabs__link">
         
   
   
@@ -301,7 +297,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../2-hardware/" class="md-tabs__link">
+      <a href="../../2-hardware/" class="md-tabs__link">
         
   
   
@@ -320,7 +316,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../3-tokenization/" class="md-tabs__link">
+      <a href="../../3-tokenization/" class="md-tabs__link">
         
   
   
@@ -339,7 +335,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../4-embeddings/" class="md-tabs__link">
+      <a href="../../4-embeddings/" class="md-tabs__link">
         
   
   
@@ -358,7 +354,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../5-attention/" class="md-tabs__link">
+      <a href="../../5-attention/" class="md-tabs__link">
         
   
   
@@ -377,7 +373,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../6-sampling/" class="md-tabs__link">
+      <a href="../../6-sampling/" class="md-tabs__link">
         
   
   
@@ -396,7 +392,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../7-finetuning/" class="md-tabs__link">
+      <a href="../../7-finetuning/" class="md-tabs__link">
         
   
   
@@ -415,7 +411,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../8-interacting/" class="md-tabs__link">
+      <a href="../../8-interacting/" class="md-tabs__link">
         
   
   
@@ -434,7 +430,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../9-rag/" class="md-tabs__link">
+      <a href="../../9-rag/" class="md-tabs__link">
         
   
   
@@ -451,11 +447,9 @@
   
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="./" class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../../10-prompting.md" class="md-tabs__link">
         
   
   
@@ -474,7 +468,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../11-practicalities/" class="md-tabs__link">
+      <a href="../../11-practicalities/" class="md-tabs__link">
         
   
   
@@ -493,7 +487,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../ethics/" class="md-tabs__link">
+      <a href="../../ethics/" class="md-tabs__link">
         
   
   
@@ -538,7 +532,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="https://docs.science.ai.cam.ac.uk/" title="Introduction to Large Language Models" class="md-nav__button md-logo" aria-label="Introduction to Large Language Models" data-md-component="logo">
       
-  <img src="../imgs/trace.svg" alt="logo">
+  <img src="../../imgs/trace.svg" alt="logo">
 
     </a>
     Introduction to Large Language Models
@@ -592,7 +586,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href=".." class="md-nav__link ">
+            <a href="../.." class="md-nav__link ">
               
   
   
@@ -636,7 +630,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Home/LICENSE/" class="md-nav__link">
+      <a href="../../Home/LICENSE/" class="md-nav__link">
         
   
   
@@ -664,7 +658,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Home/about/" class="md-nav__link">
+      <a href="../../Home/about/" class="md-nav__link">
         
   
   
@@ -699,7 +693,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1-introduction/" class="md-nav__link">
+      <a href="../../1-introduction/" class="md-nav__link">
         
   
   
@@ -726,7 +720,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2-hardware/" class="md-nav__link">
+      <a href="../../2-hardware/" class="md-nav__link">
         
   
   
@@ -753,7 +747,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../3-tokenization/" class="md-nav__link">
+      <a href="../../3-tokenization/" class="md-nav__link">
         
   
   
@@ -780,7 +774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4-embeddings/" class="md-nav__link">
+      <a href="../../4-embeddings/" class="md-nav__link">
         
   
   
@@ -807,7 +801,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../5-attention/" class="md-nav__link">
+      <a href="../../5-attention/" class="md-nav__link">
         
   
   
@@ -834,7 +828,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../6-sampling/" class="md-nav__link">
+      <a href="../../6-sampling/" class="md-nav__link">
         
   
   
@@ -861,7 +855,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../7-finetuning/" class="md-nav__link">
+      <a href="../../7-finetuning/" class="md-nav__link">
         
   
   
@@ -888,7 +882,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../8-interacting/" class="md-nav__link">
+      <a href="../../8-interacting/" class="md-nav__link">
         
   
   
@@ -915,7 +909,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../9-rag/" class="md-nav__link">
+      <a href="../../9-rag/" class="md-nav__link">
         
   
   
@@ -939,19 +933,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../10-prompting.md" class="md-nav__link">
         
   
   
@@ -967,7 +952,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -979,7 +963,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../11-practicalities/" class="md-nav__link">
+      <a href="../../11-practicalities/" class="md-nav__link">
         
   
   
@@ -1006,7 +990,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ethics/" class="md-nav__link">
+      <a href="../../ethics/" class="md-nav__link">
         
   
   
@@ -1114,7 +1098,7 @@
                 
                 
               
-              Thanks for your feedback! Help us improve this page by using our <a href="https://github.com/acceleratescience/large-language-models/issues/new/?title=[Feedback]+Prompting+-+/10-prompting/" target="_blank" rel="noopener">feedback form</a>.
+              Thanks for your feedback! Help us improve this page by using our <a href="https://github.com/acceleratescience/large-language-models/issues/new/?title=[Feedback]+Retrieval%20Augmented%20Generation+-+/old/10-prompting/" target="_blank" rel="noopener">feedback form</a>.
             </div>
           
             <div data-md-value="0" hidden>
@@ -1127,7 +1111,7 @@
                 
                 
               
-              Thanks for your feedback! Help us improve this page by using our <a href="https://github.com/acceleratescience/large-language-models/issues/new/?title=[Feedback]+Prompting+-+/10-prompting/" target="_blank" rel="noopener">feedback form</a>.
+              Thanks for your feedback! Help us improve this page by using our <a href="https://github.com/acceleratescience/large-language-models/issues/new/?title=[Feedback]+Retrieval%20Augmented%20Generation+-+/old/10-prompting/" target="_blank" rel="noopener">feedback form</a>.
             </div>
           
         </div>
@@ -1154,44 +1138,6 @@
       
         <footer class="md-footer">
   
-    
-      
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
-        
-          
-          <a href="../9-rag/" class="md-footer__link md-footer__link--prev" aria-label="Previous: RAG">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              <div class="md-ellipsis">
-                RAG
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../11-practicalities/" class="md-footer__link md-footer__link--next" aria-label="Next: Practicalities">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                Practicalities
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
     
   
   <div class="md-footer-meta md-typeset">
@@ -1297,14 +1243,14 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["toc.integrate", "search.suggest", "search.highlight", "announce.dismiss", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["toc.integrate", "search.suggest", "search.highlight", "announce.dismiss", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
       
-        <script src="../assets/js/custom.js"></script>
+        <script src="../../assets/js/custom.js"></script>
       
     
   </body>

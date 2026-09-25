@@ -9,10 +9,6 @@
          <lastmod>2026-09-25</lastmod>
     </url>
     <url>
-         <loc>https://docs.science.ai.cam.ac.uk/large-language-models/10-prompting/</loc>
-         <lastmod>2026-09-25</lastmod>
-    </url>
-    <url>
          <loc>https://docs.science.ai.cam.ac.uk/large-language-models/11-practicalities/</loc>
          <lastmod>2026-09-25</lastmod>
     </url>
@@ -66,6 +62,10 @@
     </url>
     <url>
          <loc>https://docs.science.ai.cam.ac.uk/large-language-models/Home/workshop/</loc>
+         <lastmod>2026-09-25</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.science.ai.cam.ac.uk/large-language-models/old/10-prompting/</loc>
          <lastmod>2026-09-25</lastmod>
     </url>
 </urlset>
