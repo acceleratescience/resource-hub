@@ -1,0 +1,50 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table thead {
+    background-color: var(--md-primary-fg-color);
+    color: var(--md-primary-bg-color);
+}
+
+table tbody tr:nth-child(even) {
+    background-color: var(--md-code-bg-color);
+}
+
+table td:first-child {
+    white-space: nowrap;
+    font-weight: 500;
+}
+/* hide jupyter notebooks input/output numbers */
+.jp-InputPrompt {
+    display: none !important;
+  }
+  
+  .jp-OutputPrompt {
+    display: none !important;
+  }
+
+/* Maximum space for text block
+.md-grid {
+  max-width: 100%; /* or 100%, if you want to stretch to full-width */
+/* } */
+.swiper-slide {
+  /* Use flexbox to center the image inside the slide */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  /* Prevent images from being taller than 75% of the viewport height */
+  max-height: 75vh;
+
+  /* Let the browser determine the width and height automatically */
+  /* while respecting the max-height and the image's aspect ratio. */
+  width: auto;
+  height: auto;
+  
+  /* Ensure the image scales nicely within the box */
+  object-fit: contain;
+}
