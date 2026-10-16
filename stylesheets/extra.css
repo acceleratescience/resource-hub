@@ -1,0 +1,127 @@
+.modal-bg {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0; top: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.0);
+  justify-content: center; align-items: center;
+}
+.modal-bg.active { display: flex; }
+.modal-content,
+.modal-content h2,
+.modal-content h4,
+.modal-content p {
+  color: #fff;
+}
+.modal-content {
+  background: rgba(0,0,0,0.9); /* transparent popup */
+  padding: 32px;
+  border-radius: 12px;
+  max-width: 600px;
+  min-width: 400px;
+  text-align: center;
+  border: 2px solid #fff;           /* white border */
+  box-shadow: 0 4px 24px rgba(0,0,0,0.3); /* subtle shadow */
+  position: relative;
+}
+.modal-content p {
+  text-align: left;        /* Left align description */
+  margin-top: 16px;
+}
+.close-btn {
+  position: absolute;
+  top: -12px; right: 4px;
+  font-size: 2em;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Beginner - Green */
+.grid.cards.newcomer > ul > li:hover {
+    background-color: rgba(76, 175, 80, 0.1);
+    border-color: #4CAF50;
+}
+
+.grid.cards.newcomer > ul > li {
+    border-left-color: #4CAF50 !important;
+}
+
+/* Intermediate - Orange/Yellow */
+.grid.cards.intermediate > ul > li:hover {
+    background-color: rgba(255, 152, 0, 0.1);
+    border-color: #FF9800;
+}
+
+.grid.cards.intermediate > ul > li {
+    border-left-color: #FF9800 !important;
+}
+
+/* Advanced - Red */
+.grid.cards.proficient > ul > li:hover {
+    background-color: rgba(244, 67, 54, 0.1);
+    border-color: #F44336;
+}
+
+.grid.cards.proficient > ul > li {
+    border-left-color: #F44336 !important;
+}
+
+.banner {
+    height: 40px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, #1932f1, #4158D0);
+    transition: all 0.3s ease;
+}
+
+.banner-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.banner-text {
+    color: white;
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin: 0;
+    animation: fadeInDown 0.5s ease-in-out;
+}
+
+.banner-button {
+    padding: 4px 12px;
+    background-color: white;
+    color: #1932f1;
+    border-radius: 15px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.banner-button:hover {
+    background-color: #e0e0e0;
+    transform: translateY(-1px);
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.md-header {
+    top: 40px;
+}
