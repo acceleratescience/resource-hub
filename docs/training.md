@@ -78,8 +78,8 @@ Accelerate's 1-day workshops are created by the Accelerate Programme's Machine L
 
 -   [__Uncertainty Estimation in AI__](https://github.com/ErikEnglesson/UncertaintyInAIWorkshop)<br>`INTERMEDIATE`
 
-   ---
-   Learn about uncertainty in AI and machine learning.
+    ---
+    Learn about uncertainty in AI and machine learning.
 
 </div>
 
