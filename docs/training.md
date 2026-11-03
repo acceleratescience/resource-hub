@@ -56,10 +56,10 @@ Accelerate's 1-day workshops are created by the Accelerate Programme's Machine L
 -   [__Packaging and Publishing Python Code__](https://docs.science.ai.cam.ac.uk/packaging-publishing/)<br>`INTERMEDIATE`
 
     ---
-    Equip yourself with knowledge of workflows and tools you can use to package and publish your python code.
+    Equip yourself with knowledge of workflows and tools you can use to package and publish your Python code.
 
 
--   [__Hands On Machine Learning__](https://docs.science.ai.cam.ac.uk/machine-learning-hands-on/)<br>`INTERMEDIATE`
+-   [__Hands-On Machine Learning__](https://docs.science.ai.cam.ac.uk/machine-learning-hands-on/)<br>`INTERMEDIATE`
 
     ---
     Get some experience with using machine learning models on some real data.
@@ -76,19 +76,24 @@ Accelerate's 1-day workshops are created by the Accelerate Programme's Machine L
     ---
     Build a machine learning pipeline for your scientific project.
 
+-   [__Uncertainty Estimation in AI__](https://github.com/ErikEnglesson/UncertaintyInAIWorkshop)<br>`INTERMEDIATE`
+
+   ---
+   Learn about uncertainty in AI and machine learning.
+
 </div>
 
 <div class="grid cards proficient" markdown>
 
--   [__Hands On Large Language Models__](https://github.com/acceleratescience/hands-on-llms/) <br>`PROFICIENT`
+-   [__Hands-On Large Language Models__](https://github.com/acceleratescience/hands-on-llms/) <br>`PROFICIENT`
 
     ---
-    Get hands on experience using LLMs - OpenAI, Pydantic, Jinja, databases, and more...
+    Get hands-on experience using LLMs - OpenAI, Pydantic, Jinja, databases, and more...
 
--   [__Hands On Agentic AI__](https://github.com/acceleratescience/hands-on-agentic-ai/) <br>`PROFICIENT`
+-   [__Hands-On Agentic AI__](https://github.com/acceleratescience/hands-on-agentic-ai/) <br>`PROFICIENT`
 
     ---
-    Get hands on experience using Agentic AI - Theory, Interfaces, LangGraph and more...
+    Get hands-on experience using Agentic AI - Theory, Interfaces, LangGraph and more...
 
 </div>
 
@@ -113,7 +118,7 @@ These online courses are run jointly between the Accelerate programme and Cambri
 -   [__ML Academy__]()<br>`NEWCOMER`
 
     ---
-    This 12 month introduction to Machine Learning is a structured Accelerate-Cambridge Spark course. With the fundamentals of AI and ML, and a selection of modules to choose from, the course is designed to give you the knowledge to confidently begin using ML in your work. Contact us to register your interest.
+    This 12-month introduction to Machine Learning is a structured Accelerate-Cambridge Spark course. With the fundamentals of AI and ML, and a selection of modules to choose from, the course is designed to give you the knowledge to confidently begin using ML in your work. Contact us to register your interest.
 
 
 </div>
@@ -129,6 +134,11 @@ Other AI-related courses taught within the university
     ---
     This course was originally delivered at the University of Sheffield (2011-2015), but has been updated with current material to introduce key concepts and methods in machine learning.
 
+-   [__Machine Learning Foundations__](https://mlatcl.github.io/mlfc/)<br>`NEWCOMER`
+
+    ---
+    This course introduces the foundations of machine learning for learners with a basic knowledge of probability and linear algebra, preparing them for more advanced machine learning courses. It was originally delivered at Dedan Kimathi University of Technology in Nyeri, Kenya.
+    
 </div>
 
 <div class="grid cards intermediate" markdown>
@@ -166,10 +176,15 @@ We recommend the following textbooks to cover the basics of Machine Learning and
 
 <div class="grid cards newcomer" markdown>
 
+-   [__The Atomic Human, Neil D. Lawrence__](https://the-atomic-human.ai/)<br>`NEWCOMER`
+
+    ---
+    A blend of philosophy, technology and personal stories that explores the intersection between humans and technology.
+
 -   [__Deep Learning Foundations and Concepts, Chris Bishop__](https://idiscover.lib.cam.ac.uk/permalink/f/1ii55o6/44CAM_ALMA51755683920003606)<br>`NEWCOMER`
 
     ---
-    This ML Textbook covers some of the basics of probability, Maching Learning & Deep Learning, with chapters on modern models like transformers & diffusion models
+    This ML textbook covers some of the basics of probability, Machine Learning & Deep Learning, with chapters on modern models like transformers & diffusion models
 
 -   [__Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow__](https://idiscover.lib.cam.ac.uk/permalink/f/t9gok8/44CAM_ALMA51716157040003606)<br>`NEWCOMER`
 
@@ -208,15 +223,15 @@ We recommend the following textbooks to cover the basics of Machine Learning and
 
 </div>
 
-## Pods (beta)
-We are trialing setting up runpod instances for each person at our clinic. 
+## Pods
+Our bespoke system to provide virtual machines for each person at our workshops. 
 
 <div class="grid cards newcomer" markdown>
 
 -   [__Click Here to Login to Pods__](https://pods.acceleratescience.co.uk/)<br>`NEWCOMER`
 
     ---
-    We will be trialling this platform during some of our sessions. Ask a member of the MLE team for your username and password.
+    We will be using this platform during some of our sessions. Ask a member of the MLE team for your username and password.
 
 
 </div>
