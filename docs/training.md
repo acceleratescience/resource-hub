@@ -76,7 +76,12 @@ Accelerate's 1-day workshops are created by the Accelerate Programme's Machine L
     ---
     Build a machine learning pipeline for your scientific project.
 
--   [__Uncertainty Estimation in AI__](https://github.com/ErikEnglesson/UncertaintyInAIWorkshop)<br>`INTERMEDIATE`
+-   [__AI Agents for Research Workflows__](https://github.com/acceleratescience/ai-agents)<br>`INTERMEDIATE`
+
+    ---
+    Learn about using AI Agents in scientific research.
+
+-   [__Uncertainty Estimation in AI__](https://github.com/acceleratescience/UncertaintyInAIWorkshop)<br>`INTERMEDIATE`
 
     ---
     Learn about uncertainty in AI and machine learning.
